@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas - Knights
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 7dda3fa1766e0431fafd11fc66522e5f, type: 3}
+    totalSpriteSurfaceArea: 21042055
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a86b1a608db4f4e0d85cd6cb6cbb2215, type: 3}
+  - {fileID: 21300000, guid: 77936b80cb18f46958a9f439d5ae2fd1, type: 3}
+  - {fileID: 21300000, guid: d539bf41702a74b6b880ac4e8c0b40d7, type: 3}
+  - {fileID: 21300000, guid: e7fa8181e12a34eb2bd8e1a89200d344, type: 3}
+  - {fileID: 21300000, guid: 1789fa81df807419abacf369034b6103, type: 3}
+  - {fileID: 21300000, guid: 35b1a3f1cf0b54af19048ad6a58f04d3, type: 3}
+  - {fileID: 21300000, guid: 57d5d052d0f8341f38d9923debc01ad2, type: 3}
+  - {fileID: 21300000, guid: 5044b4825ae694e0ca7ffc5e730b53a2, type: 3}
+  - {fileID: 21300000, guid: fe352f921999b4713a5a7e552d8fccac, type: 3}
+  - {fileID: 21300000, guid: 9da147f2fe2074e3483a11c53a2f4fc6, type: 3}
+  - {fileID: 21300000, guid: 12d37913a7b6940ef881a5e49de4a60b, type: 3}
+  - {fileID: 21300000, guid: 1fd98823295be4708b82ce5ac7f281b9, type: 3}
+  - {fileID: 21300000, guid: d6bbfb438d61f455fb66d8e858488deb, type: 3}
+  - {fileID: 21300000, guid: 1399bf53fe94548cb8687fcd272ab2c0, type: 3}
+  - {fileID: 21300000, guid: 5caa7e936d9794b31a1bc84de1f0000d, type: 3}
+  - {fileID: 21300000, guid: 6ba2e304246ae4934be9fb5d9a152fd6, type: 3}
+  - {fileID: 21300000, guid: a7582184d824e41df9220b94ea2dad34, type: 3}
+  - {fileID: 21300000, guid: c4c0cb843417942ef8946f7662be5325, type: 3}
+  - {fileID: 21300000, guid: 7c6bcd84de5114474837e7964e866475, type: 3}
+  - {fileID: 21300000, guid: a1a411a4823c842b5a3e5c24b202350d, type: 3}
+  - {fileID: 21300000, guid: 51a646f4e6499464a842d5e4ab768507, type: 3}
+  - {fileID: 21300000, guid: 8ee28705c0be4433d82738e0537f2711, type: 3}
+  - {fileID: 21300000, guid: ed7fe705c0ef043debe5b0e059852fa3, type: 3}
+  - {fileID: 21300000, guid: 37230125c9ad24de0b1ce26466bc82be, type: 3}
+  - {fileID: 21300000, guid: 1ab57f25359dd4c61b7f9ee70188b362, type: 3}
+  - {fileID: 21300000, guid: e423473514411432d923d21362bf8547, type: 3}
+  - {fileID: 21300000, guid: 46c0acb5f70164846a7acf967a831373, type: 3}
+  - {fileID: 21300000, guid: 28474ae55bf16490c9ca33f9ab24dd3f, type: 3}
+  - {fileID: 21300000, guid: e511b8f554d18436585eec218026105d, type: 3}
+  - {fileID: 21300000, guid: 2efb9106750f94e0e9d768706b04c911, type: 3}
+  - {fileID: 21300000, guid: 0119d0260d350495d988956b8db92d52, type: 3}
+  - {fileID: 21300000, guid: bc2d5a36872b44d0a85ad5bfa0abf8f8, type: 3}
+  - {fileID: 21300000, guid: 30847356144a4453f988626ded544993, type: 3}
+  - {fileID: 21300000, guid: aba70be6dfec04210b9e398097827353, type: 3}
+  - {fileID: 21300000, guid: 2c749ff6f193d46acabc0b11b7645628, type: 3}
+  - {fileID: 21300000, guid: e985d707e19bc4d6581cda4a59440c24, type: 3}
+  - {fileID: 21300000, guid: 91b179278c7d84ac680d44d64628a8a6, type: 3}
+  - {fileID: 21300000, guid: ac67b4a7e58224591aa0d9a91bcd4a5f, type: 3}
+  - {fileID: 21300000, guid: 563f0a08ccd5b46e1a2a75a77c45dffc, type: 3}
+  - {fileID: 21300000, guid: 68e47e082cb194fab880e865386323e0, type: 3}
+  - {fileID: 21300000, guid: a031a01840f6a43b4b55e741e1095b8d, type: 3}
+  - {fileID: 21300000, guid: a7a7ef38ae2f24a34a83b9c50f7e299f, type: 3}
+  - {fileID: 21300000, guid: 64b36b48157a7454e99f8f1f4adb5ce3, type: 3}
+  - {fileID: 21300000, guid: 760ff158d7e0044afa43e35bab69fde6, type: 3}
+  - {fileID: 21300000, guid: 2eab2c58c67c34c85b2df72f6ce14065, type: 3}
+  - {fileID: 21300000, guid: 1564dc68a91d44f90b731416af600fea, type: 3}
+  - {fileID: 21300000, guid: f65a5978d3af3489ca0b1eb1ca00a883, type: 3}
+  - {fileID: 21300000, guid: 4a5e7a781a55f44b79b2079b25bca9ee, type: 3}
+  - {fileID: 21300000, guid: f518e0885472347e7b2450946ca7a3b1, type: 3}
+  - {fileID: 21300000, guid: 94dcac8880c1e49d78615c81ba609fcd, type: 3}
+  - {fileID: 21300000, guid: 04dec2a867c994535949615982ab5f81, type: 3}
+  - {fileID: 21300000, guid: 98c894b8476d147979bf9579b497cd8b, type: 3}
+  - {fileID: 21300000, guid: cb4901e8b663245e2b2ba87494f51990, type: 3}
+  - {fileID: 21300000, guid: bdb1b3f8365144861b7c8ef16bd4554a, type: 3}
+  - {fileID: 21300000, guid: f2c26529604bd4e21a2117df2edcd64d, type: 3}
+  - {fileID: 21300000, guid: 1b50214917882418daec0245b349f83e, type: 3}
+  - {fileID: 21300000, guid: fd8f9f994f513481994968d08a92480d, type: 3}
+  - {fileID: 21300000, guid: c11dc4a94e7034215baf5b5dac0d628f, type: 3}
+  - {fileID: 21300000, guid: 2169311afcac64b42a1df9ea74391bd0, type: 3}
+  - {fileID: 21300000, guid: 03fb0f1a75f12429380b170d76cd2e7a, type: 3}
+  - {fileID: 21300000, guid: 85564a5a5d91843d49db3c8bc6c4705c, type: 3}
+  - {fileID: 21300000, guid: fe26fc8a4be4f4570b8581236155dd10, type: 3}
+  - {fileID: 21300000, guid: 8f6df89ac12e44d51b2402ed99454ca6, type: 3}
+  - {fileID: 21300000, guid: 3ce512cae9c0648a589d78b55638011c, type: 3}
+  - {fileID: 21300000, guid: bfd4affa3e4dc4e68a03c86ccf06c4b3, type: 3}
+  - {fileID: 21300000, guid: 3ceb251b0049848bab0f4af21fc9ed2d, type: 3}
+  - {fileID: 21300000, guid: 2876309b258a64d908696723b057a18d, type: 3}
+  - {fileID: 21300000, guid: 2565d1abe4abf4ef9bb275de0b591343, type: 3}
+  - {fileID: 21300000, guid: 4273c3ab9d14e44b5bbb0bb6d11fff79, type: 3}
+  - {fileID: 21300000, guid: 8b20ceab887e04fe8af34105d197e5fa, type: 3}
+  - {fileID: 21300000, guid: 89adc9dbedde842ddb2bf66c73d02fa0, type: 3}
+  - {fileID: 21300000, guid: 8171f32c50448472bb7ea4f658d9d64b, type: 3}
+  - {fileID: 21300000, guid: 93e8252cfca1845209e8587d4511a1fd, type: 3}
+  - {fileID: 21300000, guid: f8bdcd2c663b64a6baa79964fe38d417, type: 3}
+  - {fileID: 21300000, guid: b693684c725b64fe09005ddc9d0c4c22, type: 3}
+  - {fileID: 21300000, guid: 9a682c6c19fe14887aeb1676df06be60, type: 3}
+  - {fileID: 21300000, guid: 6ae5c19c0dc2d42ee90c3576a884a843, type: 3}
+  - {fileID: 21300000, guid: 589541bc9ef3946568b07c701fd32b58, type: 3}
+  - {fileID: 21300000, guid: 2decf3bc271604f1a9ddc4143fc53041, type: 3}
+  - {fileID: 21300000, guid: 47b02f4dee8ca4838aca244fafbabb84, type: 3}
+  - {fileID: 21300000, guid: 11d0928d5f77340e49b1cbf82c7d304d, type: 3}
+  - {fileID: 21300000, guid: f18d4fbd1390944cdae0eea355090539, type: 3}
+  - {fileID: 21300000, guid: c0f77bdd77f8b4305816ab56ba86fa70, type: 3}
+  - {fileID: 21300000, guid: f2bdd01eed9d54b0bbda4f8e270f56e5, type: 3}
+  - {fileID: 21300000, guid: 7c5c888e2e6764c86941e2803fe54f3a, type: 3}
+  - {fileID: 21300000, guid: 945c719ebed5c44b9b6ba15196ee3ff0, type: 3}
+  - {fileID: 21300000, guid: 0719830f15c214dcc974a44980676291, type: 3}
+  - {fileID: 21300000, guid: 79cfe8ef107194ce898aeee7f422458e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - knightsilver_leftleg
+  - knightsilver_lefthand
+  - knightbigdark_head
+  - knightsilver_head
+  - knightdark_rightarm
+  - knightbigsilver_righthand
+  - knightsilver_protector
+  - knightgold_leftfoot
+  - knightbigsilver_rightarm
+  - knightbigsilver_leftarm
+  - knightbigsilver_rightlegshield
+  - knightdark_rightfingers
+  - knightgold_rightarm
+  - knightbigsilver_righthandshield
+  - knightdark_leftleg
+  - knightbigdark_righthandshield
+  - weapon_swordbig
+  - knightbigdark_leftarm
+  - knightsilver_leftelbow
+  - knight_shadow
+  - knightbigdark_leftelbow
+  - knightsilver_rightleg
+  - knightbigsilver_leftfoot
+  - knightbigdark_leftarmshield
+  - knightbigsilver_rightfingers
+  - knightbigsilver_leftleg
+  - knightbigdark_body
+  - knightgold_body
+  - knightgold_rightfoot
+  - knightgold_rightleg
+  - knightbigdark_leftfoot
+  - knightgold_lefthand
+  - knightbigsilver_rightleg
+  - weapon_axe
+  - knightbigsilver_rightfoot
+  - knightgold_leftelbow
+  - knightbigdark_lefthand
+  - knightdark_rightfoot
+  - knightgold_leftleg
+  - knightdark_head
+  - knightbigsilver_body
+  - knightbigsilver_head
+  - knightbigsilver_leftelbow
+  - knightbigdark_righthand
+  - knightbigdark_rightlegshield
+  - knightsilver_leftarm
+  - knightdark_leftfoot
+  - weapon_slash
+  - knightbigsilver_protector
+  - knightdark_rightelbow
+  - knightgold_rightfingers
+  - knightdark_body
+  - knightdark_righthand
+  - knightsilver_headshadow
+  - knightbigdark_protector
+  - knightbigdark_rightfoot
+  - knightbigdark_rightelbow
+  - knightsilver_body
+  - knightdark_leftarm
+  - weapon_swordsmall
+  - knightgold_rightelbow
+  - knightbigdark_rightarm
+  - knightgold_protector
+  - knightgold_righthand
+  - knightsilver_rightfingers
+  - knightbigdark_leftleg
+  - knightsilver_righthand
+  - knightdark_headshadow
+  - knightdark_lefthand
+  - knightbigdark_back
+  - knightsilver_rightelbow
+  - knightbigdark_rightleg
+  - knightbigsilver_lefthand
+  - weapon_swordlong
+  - knightsilver_rightarm
+  - knightgold_headshadow
+  - knightgold_leftarm
+  - knightdark_protector
+  - knightdark_leftelbow
+  - knightbigdark_leftlegshield
+  - knightsilver_rightfoot
+  - knightsilver_leftfoot
+  - knightbigsilver_leftlegshield
+  - knightbigsilver_rightelbow
+  - knightdark_rightleg
+  - knightgold_head
+  - knightbigdark_rightfingers
+  - knightbigsilver_leftarmshield
+  m_RenderDataMap: {}
+  m_Tag: Atlas - Knights
+  m_IsVariant: 0

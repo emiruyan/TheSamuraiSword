@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icons05x
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ed0721a684ef54d3cadf422c93c89ec8, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8f4ea45097dc04407901fed4835ea1c6, type: 3}
+  - {fileID: 21300000, guid: 6ac36fb0db63c418384aa034fca201a6, type: 3}
+  - {fileID: 21300000, guid: 6b3edae0be5bd4cf98835eca5b626063, type: 3}
+  - {fileID: 21300000, guid: 34cea511dd08442f0b6d6d804980662c, type: 3}
+  - {fileID: 21300000, guid: 340dae111dccd4b9d9e78d46718148a6, type: 3}
+  - {fileID: 21300000, guid: efe4b3617dc1241b3a331f29f2e1742b, type: 3}
+  - {fileID: 21300000, guid: 74f2e091b5fe64becb6c027eb38b6a32, type: 3}
+  - {fileID: 21300000, guid: 337135e1af0a64e349f1c6718685c17b, type: 3}
+  - {fileID: 21300000, guid: 28c7b8e19edae4f58ae3426874729493, type: 3}
+  - {fileID: 21300000, guid: 67736702fee904dbe9c7d00c1a71ede9, type: 3}
+  - {fileID: 21300000, guid: b0707352eb15b4348b1127f715133756, type: 3}
+  - {fileID: 21300000, guid: c40a3a726b0774b1a920ebbbfdafe9de, type: 3}
+  - {fileID: 21300000, guid: cf7252d2cf19b457f82340176f3f9d03, type: 3}
+  - {fileID: 21300000, guid: f6844803caee649a8b21d099d1270d97, type: 3}
+  - {fileID: 21300000, guid: 7ec03903ff91141ff8834adcb912fa36, type: 3}
+  - {fileID: 21300000, guid: 04bbc66330e38462c8861012e6c87765, type: 3}
+  - {fileID: 21300000, guid: 68c04583f757d4e5ab152504f6a5cc5f, type: 3}
+  - {fileID: 21300000, guid: fd56a504fefef48d1b0efbd4afe828dd, type: 3}
+  - {fileID: 21300000, guid: a888a7041df3a45d0bda25403652ae0b, type: 3}
+  - {fileID: 21300000, guid: 3537b47486c3f42c2b7eb64ea8c04ba0, type: 3}
+  - {fileID: 21300000, guid: a0245c94927ea497e99098e062722455, type: 3}
+  - {fileID: 21300000, guid: 011132c405bac4ebfa5119c554b71544, type: 3}
+  - {fileID: 21300000, guid: d3c508c41709e4f1ca884b16128a3b27, type: 3}
+  - {fileID: 21300000, guid: 54939005fb6ec4c12b40bd1225991808, type: 3}
+  - {fileID: 21300000, guid: 43fdc035d056e43cd80bec6dc6862fb6, type: 3}
+  - {fileID: 21300000, guid: 9fe4be556c8ed4788b07a81d3bce4449, type: 3}
+  - {fileID: 21300000, guid: 86f8b265fc61c4ecab67b2222e2587e2, type: 3}
+  - {fileID: 21300000, guid: da470b16c80a64699a7b2c3c79a5bc2f, type: 3}
+  - {fileID: 21300000, guid: 60465946d42d143ca9e39ad6714726be, type: 3}
+  - {fileID: 21300000, guid: 705eda56fd7054b1c9647ea107a3c6f1, type: 3}
+  - {fileID: 21300000, guid: 4775eb860b371452d9a1de2cc1995b10, type: 3}
+  - {fileID: 21300000, guid: d8dfdf860ebb44dd397efb11ffbb9adf, type: 3}
+  - {fileID: 21300000, guid: 02f92ac604cae47d2b48b83e7d9a469c, type: 3}
+  - {fileID: 21300000, guid: 6077b4a7482fa4a479046ef23ce0812a, type: 3}
+  - {fileID: 21300000, guid: 35f3edd7efef44b4ba7dcde286a941a9, type: 3}
+  - {fileID: 21300000, guid: 357eea486a10144cda3b3e7821748482, type: 3}
+  - {fileID: 21300000, guid: 3feef1c81249346cc9e9b2f2b228112c, type: 3}
+  - {fileID: 21300000, guid: 66aeb719438c04876994e0b84df74c1a, type: 3}
+  - {fileID: 21300000, guid: 3d50787963860467da089f59b1f511af, type: 3}
+  - {fileID: 21300000, guid: 730c59798962e415284148027692eb2c, type: 3}
+  - {fileID: 21300000, guid: de467c79aa1cd42249806d489d7d86ef, type: 3}
+  - {fileID: 21300000, guid: 9a85b3c9970af429a81226e1fbd50e88, type: 3}
+  - {fileID: 21300000, guid: 45ea580ae24ae448a8e85e129c0075c3, type: 3}
+  - {fileID: 21300000, guid: 76ac096a18fe14915b3b7f94c6365666, type: 3}
+  - {fileID: 21300000, guid: 11b1496a2f42047fb8bb462dc50b1773, type: 3}
+  - {fileID: 21300000, guid: 5fbec47a183cc495992665a6606777b5, type: 3}
+  - {fileID: 21300000, guid: 9d9eee7a7fe6a4911aacab4a568bbac6, type: 3}
+  - {fileID: 21300000, guid: ceff7aaa2331e4e669424ece9becf13b, type: 3}
+  - {fileID: 21300000, guid: 2b0bdcaa10c7a4fc58fe7bb824996b3f, type: 3}
+  - {fileID: 21300000, guid: cc3b4aba78be342708d158863cd78889, type: 3}
+  - {fileID: 21300000, guid: f08d18ca255384aea8db720c9f4bedf0, type: 3}
+  - {fileID: 21300000, guid: 7928370b161044e0698e4e80a112dac5, type: 3}
+  - {fileID: 21300000, guid: 0feb702b8bce14d9488ee1d94e67ee32, type: 3}
+  - {fileID: 21300000, guid: 9ca65f9b253714dd894888916b23e81d, type: 3}
+  - {fileID: 21300000, guid: 4574f1ebea9e14588a88aed1815dca2d, type: 3}
+  - {fileID: 21300000, guid: 9f08e6fbfb7d94f039a799a722722abd, type: 3}
+  - {fileID: 21300000, guid: 6513268c3a6114e389e130f09b8b1c97, type: 3}
+  - {fileID: 21300000, guid: b150039cd891644f48900d4e402e99fb, type: 3}
+  - {fileID: 21300000, guid: eb53a39c18c0348bcad8accfc04b8fee, type: 3}
+  - {fileID: 21300000, guid: a9beaf3da712d4552839a555b5a4f5db, type: 3}
+  - {fileID: 21300000, guid: 041740dd4348b4e1db4c37cee63bd601, type: 3}
+  - {fileID: 21300000, guid: 1234452ed8bb2412196f8bbf70d4be0d, type: 3}
+  - {fileID: 21300000, guid: 3c81c52e8e7864ad1894927cd6f0ea50, type: 3}
+  - {fileID: 21300000, guid: 585a4b6ec3a044b73b648a02f5f011fb, type: 3}
+  - {fileID: 21300000, guid: 7fef438eaf12b46c1a293c2698a6b820, type: 3}
+  - {fileID: 21300000, guid: f39f479eb1e944d34bc14304a2684e2f, type: 3}
+  - {fileID: 21300000, guid: 740967ce2c4ae476ab32c1e3a6d4d8ae, type: 3}
+  - {fileID: 21300000, guid: c736edce479304fa38a3baef1330b066, type: 3}
+  - {fileID: 21300000, guid: 8415fafe68f4f41d78c5d8f3bbe9f85f, type: 3}
+  - {fileID: 21300000, guid: 87c9421f6394041a090260a1e37ccf6c, type: 3}
+  - {fileID: 21300000, guid: c77ad61f368844785a535affeecaae18, type: 3}
+  - {fileID: 21300000, guid: 9dcbdd8f7bb8f48399fc85320ea70afd, type: 3}
+  - {fileID: 21300000, guid: 71bba2cfb56f141d68b7699984127ce7, type: 3}
+  - {fileID: 21300000, guid: 9ef044cf0c07d425bbd162daa7d97a2d, type: 3}
+  - {fileID: 21300000, guid: 116bc8cf950d44bc0879dbc304ecbd28, type: 3}
+  - {fileID: 21300000, guid: 4ff19acff579f4513b13e08fcae5d1db, type: 3}
+  - {fileID: 21300000, guid: d3aa8cef0e63843d38316a138fdb99d8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - bigicon256_combat
+  - bigicon256_crown
+  - bigicon256_magnet
+  - bigicon256_ticket
+  - bigicon256_cup
+  - bigicon256_announcements
+  - bigicon256_ringdark
+  - bigicon256_bag
+  - bigicon256_helmetgreen
+  - bigicon256_email
+  - bigicon256_elixirpink
+  - bigicon256_flagblue
+  - bigicon256_armorred
+  - bigicon256_dicesblack
+  - bigicon256_elixirred
+  - bigicon256_rock
+  - bigicon256_compass
+  - bigicon256_target
+  - bigicon256_keygold
+  - bigicon256_ringsilver
+  - bigicon256_archery
+  - bigicon256_parchment
+  - bigicon256_ranking
+  - bigicon256_elixiryellow
+  - bigicon256_calendar
+  - bigicon256_elixiraqua
+  - bigicon256_shop
+  - bigicon256_iron
+  - bigicon256_helmetdark
+  - bigicon256_helmetgold
+  - bigicon256_helmetpurple
+  - bigicon256_ors
+  - bigicon256_star
+  - bigicon256_sword
+  - bigicon256_keysilver
+  - bigicon256_helmetsilver
+  - bigicon256_elixirpurple
+  - bigicon256_fistsilver
+  - bigicon256_ringgold
+  - bigicon256_fistgold
+  - bigicon256_armorpurple
+  - bigicon256_flagpurple
+  - bigicon256_armorblue
+  - bigicon256_diceblack
+  - bigicon256_dicered
+  - bigicon256_skull
+  - bigicon256_fistdark
+  - bigicon256_wood
+  - bigicon256_flaggreen
+  - bigicon256_map
+  - bigicon256_meat
+  - bigicon256_energy
+  - bigicon256_message
+  - bigicon256_book
+  - bigicon256_axe
+  - bigicon256_hammer
+  - bigicon256_bomb
+  - bigicon256_flagred
+  - bigicon256_armorgreen
+  - bigicon256_settings
+  - bigicon256_elixirorange
+  - bigicon256_dicesred
+  - bigicon256_lock
+  - bigicon256_dicewhite
+  - bigicon256_send
+  - bigicon256_gift
+  - bigicon256_helmetred
+  - bigicon256_elixirblue
+  - bigicon256_boot
+  - bigicon256_shield
+  - bigicon256_sandwatch
+  - bigicon256_defense
+  - bigicon256_chronometer
+  - bigicon256_helmetblue
+  - bigicon256_elixirgreen
+  - bigicon256_diceswhite
+  - bigicon256_cards
+  m_Tag: Icons05x
+  m_IsVariant: 0

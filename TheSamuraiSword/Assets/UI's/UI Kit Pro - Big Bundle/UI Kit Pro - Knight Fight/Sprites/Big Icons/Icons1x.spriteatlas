@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icons1x
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 222881efe97c14f949bbc5d13437b16c, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: eb95e8301690048e89cc8c6eac955d36, type: 3}
+  - {fileID: 21300000, guid: 36675040286b248699dfc8473785e90f, type: 3}
+  - {fileID: 21300000, guid: fa4d2b90eaea4419b88bc26a65d6537a, type: 3}
+  - {fileID: 21300000, guid: c40e69b0ba2394b8b8d2abd23e387833, type: 3}
+  - {fileID: 21300000, guid: c43b7bf0216df453b8ecef7b2208cdab, type: 3}
+  - {fileID: 21300000, guid: 10c75421776044ec9bea765348faf760, type: 3}
+  - {fileID: 21300000, guid: 645711b1b7d5e4d2596343f6053108c2, type: 3}
+  - {fileID: 21300000, guid: 945ce9021a2cf4ecdb48a60aa8a9f7ec, type: 3}
+  - {fileID: 21300000, guid: 729865123e21042cf8b22b29bea57920, type: 3}
+  - {fileID: 21300000, guid: 9c0ec822c94b141b8ab574ca2b00cc85, type: 3}
+  - {fileID: 21300000, guid: b33d4ff26bbf14a2b8aebfff24f8a6bc, type: 3}
+  - {fileID: 21300000, guid: 151b59232e4bf4f4ba5dbd387a280bd9, type: 3}
+  - {fileID: 21300000, guid: 6b4a06431f87143eb8653a7ea318e3fb, type: 3}
+  - {fileID: 21300000, guid: 3e42ca5312d6147bdbd2ea638be8d27e, type: 3}
+  - {fileID: 21300000, guid: 9b489683cc27149e5b870138bc823572, type: 3}
+  - {fileID: 21300000, guid: b0a9f7a3480dc4851ab6b6f04ce95535, type: 3}
+  - {fileID: 21300000, guid: 34df47e3ba50a47d5b15e1244deaae7c, type: 3}
+  - {fileID: 21300000, guid: e679f00405db94d58870f7f561d6bd8d, type: 3}
+  - {fileID: 21300000, guid: 21b33a24c35144fb58ce730ca6f7d4b1, type: 3}
+  - {fileID: 21300000, guid: 1acf4884b20a440e1b6c824208143d90, type: 3}
+  - {fileID: 21300000, guid: 0c19f5c4df0f14fd5a24e0376d8fa846, type: 3}
+  - {fileID: 21300000, guid: da279dd48031e4454870a55b8b7d2a6e, type: 3}
+  - {fileID: 21300000, guid: 724d23051dab64e61a9016695425fe1c, type: 3}
+  - {fileID: 21300000, guid: c4ea91151627e47ecb57aab4a4813cdb, type: 3}
+  - {fileID: 21300000, guid: c0f97636359ce43678324f44fe86ef1c, type: 3}
+  - {fileID: 21300000, guid: ebf00bd654dee414da7df88639a4e9e6, type: 3}
+  - {fileID: 21300000, guid: 55e500e612e06441c9a1450c419ec0d4, type: 3}
+  - {fileID: 21300000, guid: 9d311207f65d5437b865de1b504d5d3a, type: 3}
+  - {fileID: 21300000, guid: f0ea6b07cbb7444b6a79f44dc155c9a7, type: 3}
+  - {fileID: 21300000, guid: b2f9ec078a9ee4334af5b5ad93510668, type: 3}
+  - {fileID: 21300000, guid: 912fce1718e0347b2983f4f39be37a80, type: 3}
+  - {fileID: 21300000, guid: b9d80437fdbe247fc9ad5a14d9422002, type: 3}
+  - {fileID: 21300000, guid: d858d9a7063f4430c955291546274266, type: 3}
+  - {fileID: 21300000, guid: 8ed8ffc78c51a4cdcb9f1054f9e38948, type: 3}
+  - {fileID: 21300000, guid: 5c0105e72ace34082a4154df6a72de75, type: 3}
+  - {fileID: 21300000, guid: 9b85faf7bbd1d46c6ba59ba71f9eccda, type: 3}
+  - {fileID: 21300000, guid: e950d3386ee324f7c96f104b7259bf23, type: 3}
+  - {fileID: 21300000, guid: 9ac8a268de2f44c27ae592acd4605f79, type: 3}
+  - {fileID: 21300000, guid: a5d9129824ee64fbdbfd416e7efa59f2, type: 3}
+  - {fileID: 21300000, guid: 3abcb3b84c3bd4622aed0c288956f2e2, type: 3}
+  - {fileID: 21300000, guid: baed69c8f2b934eddbe899fdb554766d, type: 3}
+  - {fileID: 21300000, guid: 66395ec87d3414f3cb2323f1c2b2757b, type: 3}
+  - {fileID: 21300000, guid: 1c7c53f848e484bf2ba61cb2a60a1f1f, type: 3}
+  - {fileID: 21300000, guid: d226f3390a5cd49889820a13d08cb6d3, type: 3}
+  - {fileID: 21300000, guid: 50fcfa39bba414d50b94190aa9d0240c, type: 3}
+  - {fileID: 21300000, guid: 13c9fe39ff0334991b008b6082f30eb3, type: 3}
+  - {fileID: 21300000, guid: 5afbf949ec3d04bb7b21534be2adeb7f, type: 3}
+  - {fileID: 21300000, guid: 8747c1b9536024165b7bafeb95cb4935, type: 3}
+  - {fileID: 21300000, guid: 194c9a4a3810e4dceb2d7ddbd4d5261f, type: 3}
+  - {fileID: 21300000, guid: 0aea38dad909b4f3a8a5cda74e6e19c6, type: 3}
+  - {fileID: 21300000, guid: b32430ea9df924012a59709284729f9c, type: 3}
+  - {fileID: 21300000, guid: 6c946f0b77bb54248b438210bc10a604, type: 3}
+  - {fileID: 21300000, guid: c982291bd87484d52888ae57eb36e26f, type: 3}
+  - {fileID: 21300000, guid: 2084b83ba5d2d409e80adb120060500f, type: 3}
+  - {fileID: 21300000, guid: aac9df7be6c1a451ca7ccb6cafd62071, type: 3}
+  - {fileID: 21300000, guid: b9f65a9be47444ad7926153eb9e52527, type: 3}
+  - {fileID: 21300000, guid: e0efa7dbe89b843a582d5dd2e236c5d1, type: 3}
+  - {fileID: 21300000, guid: 671843eb8fe364c2b90536e605031279, type: 3}
+  - {fileID: 21300000, guid: 06b916eb59f12470fbf9888bfaa24314, type: 3}
+  - {fileID: 21300000, guid: 95c82afba9e754fd9a6ab4020739b98e, type: 3}
+  - {fileID: 21300000, guid: b850183cf81624c4fa512b097d1fa35e, type: 3}
+  - {fileID: 21300000, guid: 12f74e7c0cddb4013a716bceec988d05, type: 3}
+  - {fileID: 21300000, guid: 5400a99c40b8d4e4ab9efbbd7d2d85ba, type: 3}
+  - {fileID: 21300000, guid: 8da1e9acc57ff43ddb66f92cbd62b3b3, type: 3}
+  - {fileID: 21300000, guid: 1816abbceabc445a2a6145867e154775, type: 3}
+  - {fileID: 21300000, guid: cf3d68fc5209540278fb2fd6f880f9c8, type: 3}
+  - {fileID: 21300000, guid: a31b0f7d098d1442f863fdc9fc89c1df, type: 3}
+  - {fileID: 21300000, guid: 08f0f78d9792f40c29edc55faa206bf3, type: 3}
+  - {fileID: 21300000, guid: 826c6acdb32ea4bebb4c05e60a4b9e2a, type: 3}
+  - {fileID: 21300000, guid: f69bee1e234de4ee2a158175f598acd5, type: 3}
+  - {fileID: 21300000, guid: 25a6816e666d94f9397751c7c76cf7a5, type: 3}
+  - {fileID: 21300000, guid: b41a887eb5ae4414395527396789d9d2, type: 3}
+  - {fileID: 21300000, guid: cac7378ef8cdd4a088297fe84fb3f7bc, type: 3}
+  - {fileID: 21300000, guid: 2435adaed03c84c8f9f9f6029625de8a, type: 3}
+  - {fileID: 21300000, guid: 29102b2f5c9534394a0d54632210395a, type: 3}
+  - {fileID: 21300000, guid: 88cee83f269c9474c9b79324f99f7e24, type: 3}
+  - {fileID: 21300000, guid: c8989bcf2a06a469cb04be74e72ecd0b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - bigicon512_dicesblack
+  - bigicon512_hammer
+  - bigicon512_ringsilver
+  - bigicon512_sword
+  - bigicon512_settings
+  - bigicon512_lock
+  - bigicon512_boot
+  - bigicon512_calendar
+  - bigicon512_combat
+  - bigicon512_elixirorange
+  - bigicon512_energy
+  - bigicon512_crown
+  - bigicon512_shop
+  - bigicon512_target
+  - bigicon512_elixirred
+  - bigicon512_armorblue
+  - bigicon512_iron
+  - bigicon512_bomb
+  - bigicon512_meat
+  - bigicon512_send
+  - bigicon512_map
+  - bigicon512_keysilver
+  - bigicon512_bag
+  - bigicon512_armorpurple
+  - bigicon512_rock
+  - bigicon512_parchement
+  - bigicon512_helmetpurple
+  - bigicon512_skull
+  - bigicon512_cup
+  - bigicon512_ors
+  - bigicon512_ringgold
+  - bigicon512_armorred
+  - bigicon512_flagpurple
+  - bigicon512_chtonometer
+  - bigicon512_helmetsilver
+  - bigicon512_gift
+  - bigicon512_helmetred
+  - bigicon512_archery
+  - bigicon512_axe
+  - bigicon512_fistgold
+  - bigicon512_message
+  - bigicon512_elixiryellow
+  - bigicon512_eiixiraqua
+  - bigicon512_elixirblue
+  - bigicon512_dicered
+  - bigicon512_flaggreen
+  - bigicon512_elixirgreen
+  - bigicon512_sandwatch
+  - bigicon512_armorgreen
+  - bigicon512_wood
+  - bigicon512_flagred
+  - bigicon512_fistsilver
+  - bigicon512_shield
+  - bigicon512_dicesred
+  - bigicon512_helmetblue
+  - bigicon512_announcements
+  - bigicon512_compass
+  - bigicon512_helmetgold
+  - bigicon512_ticket
+  - bigicon512_cards
+  - bigicon512_ranking
+  - bigicon512_keygold
+  - bigicon512_defense
+  - bigicon512_flagblue
+  - bigicon512_email
+  - bigicon512_helmetdark
+  - bigicon512_diceswhite
+  - bigicon512_magnet
+  - bigicon512_elixirpink
+  - bigicon512_rindark
+  - bigicon512_elixirpurple
+  - bigicon512_diceblack
+  - bigicon512_helmetgreen
+  - bigicon512_fistblack
+  - bigicon512_dicewhite
+  - bigicon512_star
+  - bigicon512_book
+  m_Tag: Icons1x
+  m_IsVariant: 0
