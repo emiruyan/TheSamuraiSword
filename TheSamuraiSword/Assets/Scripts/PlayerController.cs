@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
   [SerializeField] private float speed;
   [SerializeField] private DynamicJoystick joystick;
   [SerializeField] private Rigidbody rb;
+   private Animator playerAnimator;
+
+  private void Awake()
+  {
+      playerAnimator = GetComponent<Animator>();
+  }
 
   public void FixedUpdate()
   {
@@ -19,17 +25,17 @@ public class PlayerController : MonoBehaviour
 
   private void PlayerMovement()
   {
-     // Vector3 direction = Vector3.forward * joystick.Vertical + Vector3.right * joystick.Horizontal;
-     // rb.velocity = direction * speed * Time.fixedDeltaTime;
-     //
-     // transform.rotation = Quaternion.identity;
+      Vector3 direction = Vector3.forward * joystick.Vertical + Vector3.right * joystick.Horizontal;
+      transform.Translate(direction * speed);
 
-     rb.velocity = new Vector3(joystick.Horizontal * speed, rb.velocity.y, joystick.Vertical * speed);
-
-     if (joystick.Horizontal != 0 || joystick.Vertical != 0)
-     {
-         transform.rotation = Quaternion.LookRotation(rb.velocity);
-     }
+      if (speed <= .1)
+      {
+          playerAnimator.SetFloat("Walk",speed);
+      }
+      if (speed <= .3)
+      {
+          playerAnimator.SetFloat("Run",speed);
+      }
   }                                                                                     
 }
 
