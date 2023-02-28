@@ -195,9 +195,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 110010, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126188, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126780, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126842, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 140312, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 143088, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
       propertyPath: m_Name
       value: Character_Samurai_Warrior_Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 149592, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183722, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410132, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 410132, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 456556, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
       propertyPath: m_RootOrder
@@ -294,6 +330,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   joystick: {fileID: 1307715973}
+  joystickBg: {fileID: 814104774}
+  sword: {fileID: 1284464806}
+  rightHand: {fileID: 1732943180}
   rb: {fileID: 150084472}
 --- !u!54 &150084472
 Rigidbody:
@@ -1150,6 +1189,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4749474227630160, guid: 591dbefb4eac4f643b796a7d13c3b532, type: 3}
   m_PrefabInstance: {fileID: 617819537}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &814104774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8135886327475159576, guid: 56fae09712773584fb63896d473a98ee, type: 3}
+  m_PrefabInstance: {fileID: 1307715971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &960624407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1444,6 +1494,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64325419954374996, guid: 292ea324543f9ca4aa7080008c985210, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 292ea324543f9ca4aa7080008c985210, type: 3}
+--- !u!1 &1284464806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126188, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+  m_PrefabInstance: {fileID: 150084465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1307715971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1762,6 +1817,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   joystick: {fileID: 0}
+  joystickBg: {fileID: 0}
+  sword: {fileID: 0}
+  rightHand: {fileID: 0}
   rb: {fileID: 1438436259}
 --- !u!1 &1485434675 stripped
 GameObject:
@@ -1920,6 +1978,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.553339, y: 0.7807255, z: 53.023235}
   m_Center: {x: 0.0961113, y: 0.38, z: 21.311617}
+--- !u!4 &1732943180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 469352, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+  m_PrefabInstance: {fileID: 150084465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1820986812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4292242640992416, guid: 1663a4ef3984f454080a57f8b047c680, type: 3}
