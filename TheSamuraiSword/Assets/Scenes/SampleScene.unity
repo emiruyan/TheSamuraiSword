@@ -251,10 +251,30 @@ PrefabInstance:
       propertyPath: Joystick
       value: 
       objectReference: {fileID: 2120370050}
+    - target: {fileID: 150084472, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 150084476, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150084476, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150084476, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6801216139379980457, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
       propertyPath: layerMask.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6801216139379980457, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 309337749}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
 --- !u!4 &150084475 stripped
@@ -336,6 +356,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4794201060144792, guid: 6ebabb4421e680b43a74e5150d07bec5, type: 3}
   m_PrefabInstance: {fileID: 174223957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &309337749 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 150084468, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+  m_PrefabInstance: {fileID: 150084465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1d22e1955437c4db4489c99feb0207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &316756825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4794201060144792, guid: 6ebabb4421e680b43a74e5150d07bec5, type: 3}
@@ -1830,8 +1861,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438436258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.78, z: 16.73}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 13.32, z: 25.67}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}

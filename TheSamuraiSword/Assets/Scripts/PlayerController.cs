@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private JoystickController Joystick;
     [SerializeField] private NavMeshAgent Player;
-    [SerializeField] private Animator playerAnimator;
+     public Animator playerAnimator;
     
     private Finger MovementFinger;
     private Vector2 MovementAmount;
