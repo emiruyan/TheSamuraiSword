@@ -1754,6 +1754,53 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64940676366726468, guid: 76f5a34c551236743847608892616a2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76f5a34c551236743847608892616a2b, type: 3}
+--- !u!1 &1418107784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418107786}
+  - component: {fileID: 1418107785}
+  m_Layer: 0
+  m_Name: '[GameManager]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418107785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418107784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd284050a224df549be3cde094ee5622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 309337749}
+  joystickController: {fileID: 2120370050}
+  rayController: {fileID: 1474677729}
+--- !u!4 &1418107786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418107784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438436258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1915,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474677729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6801216139379980457, guid: 32a02de6a6cf2194798f0e6e0e1c82ea, type: 3}
+  m_PrefabInstance: {fileID: 150084465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca0b2053a6f4e84db65a04f57ec028a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1485434675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1754253868216508, guid: 591dbefb4eac4f643b796a7d13c3b532, type: 3}
