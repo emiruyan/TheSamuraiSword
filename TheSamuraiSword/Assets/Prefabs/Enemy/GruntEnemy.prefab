@@ -586,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0682950e1c4859e48893adb21cbc5a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: {fileID: 11400000, guid: 008355125099def4689e602a07f05e00, type: 2}
   enemyAi: {fileID: 1617084073}
 --- !u!195 &1617084073
 NavMeshAgent:

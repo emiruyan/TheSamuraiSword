@@ -394,16 +394,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyPrefab: {fileID: 4884178006221862812, guid: 3ba219c66c118074e97c8f8d4d0cd481, type: 3}
-    cost: 2
+    cost: 10
   - enemyPrefab: {fileID: 5797167629729872926, guid: d2f5dee7fc6ab7c4aa20fd527821f607, type: 3}
-    cost: 13
+    cost: 10
   - enemyPrefab: {fileID: 3763314637183712064, guid: a04485fd36e5dd145aeeb96066815b32, type: 3}
-    cost: 5
-  currentWave: 20
-  waveValue: 0
+    cost: 1
+  currWave: 3
   enemiesToSpawn: []
-  spawnLocation: {fileID: 225789058}
-  waveDuration: 10
+  spawnLocation:
+  - {fileID: 225789058}
+  spawnIndex: 0
+  waveDuration: 1
+  spawnedEnemies: []
 --- !u!4 &368564215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7770027672162674900, guid: a47f27a2af7653141bfdd4a5df200aa8, type: 3}

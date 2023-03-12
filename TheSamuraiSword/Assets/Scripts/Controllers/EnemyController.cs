@@ -6,8 +6,22 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private EnemyType enemyType;
     public NavMeshAgent enemyAi;
     Transform playerTransform;
+    
+    [Header("Scriptable Variables")]
+    float enemySpeed;
+    private int enemyHealth;
+    private int enemyDamage;
+
+    private void Start()
+    {
+        enemySpeed = enemyType.speed;
+        enemyHealth = enemyType.health;
+        enemyDamage = enemyType.damage;
+        
+    }
 
     private void Awake()
     {
