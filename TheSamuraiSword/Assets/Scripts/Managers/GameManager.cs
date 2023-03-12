@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-  [SerializeField] private PlayerController playerController;
-  [SerializeField] private JoystickController joystickController;
-  [SerializeField] public RaycastController rayController;
+   public PlayerController playerController;
+   public JoystickController joystickController;
+   public EnemyController enemyController;
 }

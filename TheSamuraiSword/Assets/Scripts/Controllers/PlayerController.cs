@@ -1,16 +1,19 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private JoystickController Joystick;
     [SerializeField] private NavMeshAgent Player;
-     public Animator playerAnimator;
-    
+    RaycastHit hit;
+    public Animator playerAnimator;
+
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
@@ -26,7 +29,15 @@ public class PlayerController : MonoBehaviour
         Player.Move(scaledMovement);
         playerAnimator.SetFloat("moveX", MovementAmount.x);
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
+        
+        
     }
+
+    private void FixedUpdate()
+    {
+        RaycastShot();
+    }
+
     private void OnEnable()
     {
         EnhancedTouchSupport.Enable();
@@ -34,7 +45,7 @@ public class PlayerController : MonoBehaviour
         ETouch.Touch.onFingerUp += HandleLoseFinger;
         ETouch.Touch.onFingerMove += HandleFingerMove;
     }
-    
+
     private void OnDisable()
     {
         ETouch.Touch.onFingerDown -= HandleFingerDown;
@@ -42,7 +53,7 @@ public class PlayerController : MonoBehaviour
         ETouch.Touch.onFingerMove -= HandleFingerMove;
         EnhancedTouchSupport.Disable();
     }
-    
+
     private void HandleFingerMove(Finger MovedFinger)
     {
         if (MovedFinger == MovementFinger)
@@ -57,9 +68,9 @@ public class PlayerController : MonoBehaviour
                 ) > maxMovement)
             {
                 knobPosition = (
-                    currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition
-                    ).normalized
-                    * maxMovement;
+                                   currentTouch.screenPosition - Joystick.RectTransform.anchoredPosition
+                               ).normalized
+                               * maxMovement;
             }
             else
             {
@@ -125,78 +136,34 @@ public class PlayerController : MonoBehaviour
         };
         if (MovementFinger != null)
         {
-            GUI.Label(new Rect(10, 35, 500, 20), $"Finger Start Position: {MovementFinger.currentTouch.startScreenPosition}", labelStyle);
-            GUI.Label(new Rect(10, 65, 500, 20), $"Finger Current Position: {MovementFinger.currentTouch.screenPosition}", labelStyle);
+            GUI.Label(new Rect(10, 35, 100, 20),
+                $"Finger Start Position: {MovementFinger.currentTouch.startScreenPosition}", labelStyle);
+            GUI.Label(new Rect(10, 65, 100, 20),
+                $"Finger Current Position: {MovementFinger.currentTouch.screenPosition}", labelStyle);
         }
         else
         {
-            GUI.Label(new Rect(10, 35, 500, 20), "No Current Movement Touch", labelStyle);
+            GUI.Label(new Rect(10, 35, 100, 20), "No Current Movement Touch", labelStyle);
         }
-
-        GUI.Label(new Rect(10, 10, 500, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
+    
+        GUI.Label(new Rect(10, 10, 100, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
     }
 
-
-  
-  // [SerializeField] private float speed;
-  // [SerializeField] private DynamicJoystick joystick;
-  // [SerializeField] private Image joystickBg;
-  // public GameObject sword;
-  // public Transform rightHand;
-  // [SerializeField] private Rigidbody rb;
-  // public Transform joyStickTransform;
-  // private bool isRunning;
-  // private Animator playerAnimator;
-  //
-  //  private void Awake()
-  // {
-  //     playerAnimator = GetComponent<Animator>();
-  // }
-  //
-  // public void FixedUpdate()
-  // {
-  //    PlayerMovement();
-  //    PlayerRunAnimation();
-  //    Debug.Log(joyStickTransform);
-  //    
-  // }
-  //
-  // private void PlayerMovement()
-  // {
-  //     Vector3 direction = Vector3.forward * joystick.Vertical + Vector3.right * joystick.Horizontal;
-  //     transform.Translate(direction * speed);
-  //     
-  //       
-  //     if (direction != Vector3.zero)
-  //     {
-  //         var lookPos = Camera.main.transform.TransformDirection(direction);
-  //         lookPos.y = 0;
-  //         transform.rotation = Quaternion.LookRotation(lookPos);
-  //         rb.velocity = transform.forward * (speed * Time.fixedDeltaTime);
-  //     }
-  //     
-  //     else
-  //     {
-  //         rb.velocity = Vector3.zero;
-  //     }
-  //
-  //     if (joystickBg.gameObject.activeSelf)
-  //     {
-  //         isRunning = true;
-  //         sword.transform.position = rightHand.position;
-  //         
-  //     }
-  //     else
-  //     {
-  //         isRunning = false;
-  //         sword.transform.position = transform.position;
-  //     }
-  // }
-  //
-  // private void PlayerRunAnimation()
-  // {
-  //    
-  // }
-
+    private void RaycastShot()
+    {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5f))
+        {
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                playerAnimator.SetBool("isAttack", true);
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance,
+                    Color.green);
+            }
+        }
+        else
+        {
+            playerAnimator.SetBool("isAttack", false);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 5f, Color.red);
+        }
+    }
 }
-
