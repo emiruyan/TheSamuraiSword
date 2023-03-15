@@ -7,4 +7,6 @@ public class GameManager : MonoSingleton<GameManager>
    public PlayerController playerController;
    public JoystickController joystickController;
    public EnemyController enemyController;
+   public SpawnController spawnController;
+   public ObjectPoolPattern objectPoolPattern;
 }
