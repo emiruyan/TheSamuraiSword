@@ -6,12 +6,12 @@ using Random = UnityEngine.Random;
 
 public class ObjectPoolPattern : MonoBehaviour
 {
-    [Serializable] 
+    [Serializable] //Inspector'da görüntüleyebiliyoruz
     public struct
-        Pool 
+        Pool //Birden fazla obje'yi pool'a atmak için struck oluşturduk, değerlerimizi buna taşıdık ve bundan bir Array oluşturacağız
     {
-        public GameObject enemyPrefab; 
-        public Queue<GameObject> pooledObjects; 
+        public GameObject enemyPrefab; //Çoğalacak nesnelerimizi prefab şeklinde tutacağız
+        public Queue<GameObject> pooledObjects; //Objelerimizi sıraya sokmak için Queue oluşturduk
         public int poolSize;
     }
 
@@ -26,36 +26,36 @@ public class ObjectPoolPattern : MonoBehaviour
     private void InstantiateObject()
     {
         
-        for (int j = 0; j < pools.Length; j++) 
+        for (int j = 0; j < pools.Length; j++) //Bu döngü pools dizimizin uzunluğu kadar çalışacak
         {
-            pools[j].pooledObjects = new Queue<GameObject>(); 
+            pools[j].pooledObjects = new Queue<GameObject>(); //Yeni bir Queue oluşturduk
             
             var spawnLoc = GameManager.Instance.spawnController.spawnLocation;
 
-            for (int i = 0; i < pools[j].poolSize; i++) 
+            for (int i = 0; i < pools[j].poolSize; i++) //poolSize uzunluğunda bir döngüye sokuyoruz
             {
-                GameObject newEnemy = Instantiate(pools[j].enemyPrefab,spawnLoc[j]); 
-                newEnemy.SetActive(false); 
+                GameObject newEnemy = Instantiate(pools[j].enemyPrefab,spawnLoc[j]); //Öncelikle prefableri Instantiete ediyoruz
+                newEnemy.SetActive(false); //Bu objeleri ilk önce kullanmayacağız sahnede kapalı şekilde bekleyecek
 
 
-                pools[j].pooledObjects.Enqueue(newEnemy); 
+                pools[j].pooledObjects.Enqueue(newEnemy); //Objelerimizi Enqueue ile sıraya sokuyoruz
             }
         }
     }
 
-    public GameObject GetPoolObject(int objectType)
+    public GameObject GetPoolObject(int objectType) //Sıradaki objelerimizi buradan çekeceğiz
     {
-        if (objectType >= pools.Length) 
+        if (objectType >= pools.Length) //objectType pools dizimizin uzunluğuna büyük eşit ise;
         {
-            return null;
+            return null; //null dönsün
         }
 
-        GameObject newEnemy = pools[objectType].pooledObjects.Dequeue(); 
+        GameObject newEnemy = pools[objectType].pooledObjects.Dequeue(); //İlk sıradaki objeyi çağırıyoruz
 
-        newEnemy.SetActive(true);  
+        newEnemy.SetActive(true); //Bu objeyi kullanmaya başladığımız için SetActive(true) yaparak sahnede görünür hale getiriyoruz    
 
         pools[objectType].pooledObjects
-            .Enqueue(newEnemy); 
+            .Enqueue(newEnemy); //Enqueue ile objeyi daha sonra tekrar kullanmak için sıramızın tekrar en sonuna ekliyoruz
 
         return newEnemy;
     }
