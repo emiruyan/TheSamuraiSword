@@ -1709,7 +1709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3763314637183414894
 Transform:
   m_ObjectHideFlags: 0
@@ -1769,6 +1769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: {fileID: 11400000, guid: 9645363440a3021478b066e52c57c443, type: 2}
+  enemyDistance: 5
   enemyAi: {fileID: 2428290857904962389}
 --- !u!195 &2428290857904962389
 NavMeshAgent:

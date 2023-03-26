@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
+
     private void Update()
     {
         Vector3 scaledMovement = Player.speed * Time.deltaTime * new Vector3(
@@ -29,14 +31,10 @@ public class PlayerController : MonoBehaviour
         Player.Move(scaledMovement);
         playerAnimator.SetFloat("moveX", MovementAmount.x);
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
-        
-        
-    }
 
-    private void FixedUpdate()
-    {
-        RaycastShot();
+        PlayerRangeCalculate();
     }
+    
 
     private void OnEnable()
     {
@@ -124,46 +122,51 @@ public class PlayerController : MonoBehaviour
         return StartPosition;
     }
 
-    private void OnGUI()
-    {
-        GUIStyle labelStyle = new GUIStyle()
-        {
-            fontSize = 24,
-            normal = new GUIStyleState()
-            {
-                textColor = Color.white
-            }
-        };
-        if (MovementFinger != null)
-        {
-            GUI.Label(new Rect(10, 35, 100, 20),
-                $"Finger Start Position: {MovementFinger.currentTouch.startScreenPosition}", labelStyle);
-            GUI.Label(new Rect(10, 65, 100, 20),
-                $"Finger Current Position: {MovementFinger.currentTouch.screenPosition}", labelStyle);
-        }
-        else
-        {
-            GUI.Label(new Rect(10, 35, 100, 20), "No Current Movement Touch", labelStyle);
-        }
-    
-        GUI.Label(new Rect(10, 10, 100, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
-    }
+    // private void OnGUI()
+    // {
+    //     GUIStyle labelStyle = new GUIStyle()
+    //     {
+    //         fontSize = 24,
+    //         normal = new GUIStyleState()
+    //         {
+    //             textColor = Color.white
+    //         }
+    //     };
+    //     if (MovementFinger != null)
+    //     {
+    //         GUI.Label(new Rect(10, 35, 100, 20),
+    //             $"Finger Start Position: {MovementFinger.currentTouch.startScreenPosition}", labelStyle);
+    //         GUI.Label(new Rect(10, 65, 100, 20),
+    //             $"Finger Current Position: {MovementFinger.currentTouch.screenPosition}", labelStyle);
+    //     }
+    //     else
+    //     {
+    //         GUI.Label(new Rect(10, 35, 100, 20), "No Current Movement Touch", labelStyle);
+    //     }
+    //
+    //     GUI.Label(new Rect(10, 10, 100, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
+    // }
 
-    private void RaycastShot()
+
+    private void PlayerRangeCalculate()
     {
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 5f))
+        var enemies = GameManager.Instance.enemyList;
+
+        for (int i = 0; i < enemies.Count; i++)
         {
-            if (hit.collider.gameObject.tag == "Enemy")
+            float minDistance = 3f;
+            float distance = Vector3.Distance(enemies[i].transform.position, transform.position);
+
+            if (distance < minDistance)
             {
-                playerAnimator.SetBool("isAttack", true);
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance,
-                    Color.green);
+                playerAnimator.SetBool("isAttack",true);
+                Debug.Log("Enemy in range");
+                break;
             }
-        }
-        else
-        {
-            playerAnimator.SetBool("isAttack", false);
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 5f, Color.red);
+            else
+            {
+                playerAnimator.SetBool("isAttack",false);
+            }
         }
     }
 }

@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: {fileID: 11400000, guid: 8fd78e4798689d24e9a565b95a365b72, type: 2}
+  enemyDistance: 5
   enemyAi: {fileID: 6813558807327303986}
 --- !u!195 &6813558807327303986
 NavMeshAgent:

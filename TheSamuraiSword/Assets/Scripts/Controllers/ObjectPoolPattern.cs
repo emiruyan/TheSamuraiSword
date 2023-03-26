@@ -15,7 +15,7 @@ public class ObjectPoolPattern : MonoBehaviour
         public int poolSize;
     }
 
-    [SerializeField] private Pool[] pools = null;
+    [SerializeField] public Pool[] pools = null;
 
 
     private void Awake()
@@ -23,7 +23,7 @@ public class ObjectPoolPattern : MonoBehaviour
         InstantiateObject();
     }
 
-    private void InstantiateObject()
+    public void InstantiateObject()
     {
         
         for (int j = 0; j < pools.Length; j++) //Bu döngü pools dizimizin uzunluğu kadar çalışacak
@@ -53,7 +53,6 @@ public class ObjectPoolPattern : MonoBehaviour
         GameObject newEnemy = pools[objectType].pooledObjects.Dequeue(); //İlk sıradaki objeyi çağırıyoruz
 
         newEnemy.SetActive(true); //Bu objeyi kullanmaya başladığımız için SetActive(true) yaparak sahnede görünür hale getiriyoruz    
-
         pools[objectType].pooledObjects
             .Enqueue(newEnemy); //Enqueue ile objeyi daha sonra tekrar kullanmak için sıramızın tekrar en sonuna ekliyoruz
 
