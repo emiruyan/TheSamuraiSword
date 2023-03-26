@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent enemyAi;
     Transform playerTransform;
     private Animator enemyAnim;
+    private Rigidbody enemyRb;
 
     [Header("Scriptable Variables")]
     public float enemySpeed;
@@ -32,6 +33,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         enemyAnim = GetComponent<Animator>();
+        enemyRb = GetComponent<Rigidbody>();
         playerTransform = GameManager.Instance.playerController.transform;
     }
 
@@ -70,8 +72,17 @@ public class EnemyController : MonoBehaviour
 
         if (enemyType.health <= 0)
         {
-            gameObject.SetActive(false);
+            
+            enemyAnim.SetBool("isDead",true);
+            StartCoroutine(DestroyEnemy());
             GameManager.Instance.RemoveEnemy(this);
         }
+    }
+
+    private IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(1.8f);
+        gameObject.SetActive(false);
+        //TODO: Particle Effect oynatılacak
     }
 }
