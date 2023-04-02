@@ -12,12 +12,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private JoystickController Joystick;
     [SerializeField] private NavMeshAgent Player;
-    RaycastHit hit;
+    RaycastHit hit; 
+    private int playerHealth;
     public Animator playerAnimator;
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
+
+    private void Start()
+    {
+        playerHealth = 100;
+    }
 
     private void Update()
     {
@@ -167,6 +173,19 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isAttack",false);
             }
+        }
+    }
+
+    public void PlayerDead()
+    {
+        playerHealth -= 10;
+        
+        if (playerHealth <= 0)
+        {
+           playerAnimator.SetBool("isPlayerDead", true);
+           Time.timeScale = .5f;
+           //TODO: Player death particle effect
+           //TODO: Player death UI paneli aktif
         }
     }
 }

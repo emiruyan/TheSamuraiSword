@@ -586,11 +586,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0682950e1c4859e48893adb21cbc5a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gruntAnim: {fileID: -2665703561704063199}
-  ninjaAnim: {fileID: 0}
   enemyType: {fileID: 11400000, guid: 008355125099def4689e602a07f05e00, type: 2}
-  enemyAi: {fileID: 1617084073}
   enemyDistance: 5
+  enemyAi: {fileID: 1617084073}
+  enemySpeed: 0
+  enemyHealth: 0
+  enemyDamage: 0
 --- !u!195 &1617084073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3075,6 +3076,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64322309464031438, guid: 5a8971cccbae9b049bc6d7e7b88c0592, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64322309464031438, guid: 5a8971cccbae9b049bc6d7e7b88c0592, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8971cccbae9b049bc6d7e7b88c0592, type: 3}
 --- !u!4 &3641662545813738614 stripped
@@ -3082,3 +3091,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 426528, guid: 5a8971cccbae9b049bc6d7e7b88c0592, type: 3}
   m_PrefabInstance: {fileID: 3641662545813837398}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3641662545814009994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 175836, guid: 5a8971cccbae9b049bc6d7e7b88c0592, type: 3}
+  m_PrefabInstance: {fileID: 3641662545813837398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106737682139975757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641662545814009994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a7ee1ca895b6d4d8e71f2ff6ebc985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
