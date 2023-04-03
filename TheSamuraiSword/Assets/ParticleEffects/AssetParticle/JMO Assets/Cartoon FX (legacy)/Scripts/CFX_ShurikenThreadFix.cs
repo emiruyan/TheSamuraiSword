@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-// Cartoon FX  - (c) 2015, Jean Moreno
+// Cartoon FX  - (c) 2013,2014 Jean Moreno
 
 // Drag/Drop this script on a Particle System (or an object having Particle System objects as children) to prevent a Shuriken bug
 // where a system would emit at its original instantiated position before being translated, resulting in particles in-between
@@ -17,10 +17,7 @@ public class CFX_ShurikenThreadFix : MonoBehaviour
 		systems = GetComponentsInChildren<ParticleSystem>();
 		
 		foreach(ParticleSystem ps in systems)
-		{
-			ps.Stop(true);
-			ps.Clear(true);
-		}
+			ps.enableEmission = false;
 		
 		StartCoroutine("WaitFrame");
 	}
@@ -31,6 +28,7 @@ public class CFX_ShurikenThreadFix : MonoBehaviour
 		
 		foreach(ParticleSystem ps in systems)
 		{
+			ps.enableEmission = true;
 			ps.Play(true);
 		}
 	}

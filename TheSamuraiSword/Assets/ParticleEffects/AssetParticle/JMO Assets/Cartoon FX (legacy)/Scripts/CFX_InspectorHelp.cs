@@ -1,4 +1,4 @@
-﻿// Cartoon FX  - (c) 2015, Jean Moreno
+﻿// Cartoon FX  - (c) 2014, Jean Moreno
 
 // Help Component that can be added to any GameObject or Prefab
 // Can be useful if you want to add comments to a particular prefab about

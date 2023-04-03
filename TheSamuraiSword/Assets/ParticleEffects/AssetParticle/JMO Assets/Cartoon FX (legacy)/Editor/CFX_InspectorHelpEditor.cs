@@ -1,6 +1,6 @@
 ﻿#if UNITY_EDITOR
 
-// Cartoon FX  - (c) 2015 Jean Moreno
+// Cartoon FX  - (c) 2014 Jean Moreno
 
 // Help Component that can be added to any GameObject or Prefab
 //

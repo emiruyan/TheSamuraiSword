@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-// Cartoon FX  - (c) 2012-2016 Jean Moreno
-
 // Spawn System:
 // Preload GameObject to reuse them later, avoiding to Instantiate them.
 // Very useful for mobile platforms.
@@ -28,52 +26,25 @@ public class CFX_SpawnSystem : MonoBehaviour
 		
 		if(!instance.poolCursors.ContainsKey(uniqueId))
 		{
-			Debug.LogError("[CFX_SpawnSystem.GetNextObject()] Object hasn't been preloaded: " + sourceObj.name + " (ID:" + uniqueId + ")\n", instance);
+			Debug.LogError("[CFX_SpawnSystem.GetNextPoolObject()] Object hasn't been preloaded: " + sourceObj.name + " (ID:" + uniqueId + ")");
 			return null;
 		}
 		
 		int cursor = instance.poolCursors[uniqueId];
-		GameObject returnObj = null;
-		if(instance.onlyGetInactiveObjects)
+		instance.poolCursors[uniqueId]++;
+		if(instance.poolCursors[uniqueId] >= instance.instantiatedObjects[uniqueId].Count)
 		{
-			int loop = cursor;
-			while(true)
-			{
-				returnObj = instance.instantiatedObjects[uniqueId][cursor];
-				instance.increasePoolCursor(uniqueId);
-				cursor = instance.poolCursors[uniqueId];
-
-				if(returnObj != null && !returnObj.activeSelf)
-					break;
-
-				//complete loop: no active instance available
-				if(cursor == loop)
-				{
-					if(instance.instantiateIfNeeded)
-					{
-						Debug.Log("[CFX_SpawnSystem.GetNextObject()] A new instance has been created for \"" + sourceObj.name + "\" because no active instance were found in the pool.\n", instance);
-						PreloadObject(sourceObj);
-						var list = instance.instantiatedObjects[uniqueId];
-						returnObj = list[list.Count-1];
-						break;
-					}
-					else
-					{
-						Debug.LogWarning("[CFX_SpawnSystem.GetNextObject()] There are no active instances available in the pool for \"" + sourceObj.name +"\"\nYou may need to increase the preloaded object count for this prefab?", instance);
-						return null;
-					}
-				}
-			}
+			instance.poolCursors[uniqueId] = 0;
 		}
-		else
-		{
-			returnObj = instance.instantiatedObjects[uniqueId][cursor];
-			instance.increasePoolCursor(uniqueId);
-		}
-
-		if(activateObject && returnObj != null)
-			returnObj.SetActive(true);
-
+		
+		GameObject returnObj = instance.instantiatedObjects[uniqueId][cursor];
+		if(activateObject)
+			#if UNITY_3_5
+					returnObj.SetActiveRecursively(true);
+			#else
+					returnObj.SetActive(true);
+			#endif
+		
 		return returnObj;
 	}
 	
@@ -122,10 +93,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 	
 	public GameObject[] objectsToPreload = new GameObject[0];
 	public int[] objectsToPreloadTimes = new int[0];
-	public bool hideObjectsInHierarchy = false;
-	public bool spawnAsChildren = true;
-	public bool onlyGetInactiveObjects = false;
-	public bool instantiateIfNeeded = false;
+	public bool hideObjectsInHierarchy;
 	
 	private bool allObjectsLoaded;
 	private Dictionary<int,List<GameObject>> instantiatedObjects = new Dictionary<int, List<GameObject>>();
@@ -134,7 +102,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 	private void addObjectToPool(GameObject sourceObject, int number)
 	{
 		int uniqueId = sourceObject.GetInstanceID();
-
+				
 		//Add new entry if it doesn't exist
 		if(!instantiatedObjects.ContainsKey(uniqueId))
 		{
@@ -147,8 +115,12 @@ public class CFX_SpawnSystem : MonoBehaviour
 		for(int i = 0; i < number; i++)
 		{
 			newObj = (GameObject)Instantiate(sourceObject);
+			#if UNITY_3_5
+				newObj.SetActiveRecursively(false);
+			#else
 				newObj.SetActive(false);
-
+			#endif
+			
 			//Set flag to not destruct object
 			CFX_AutoDestructShuriken[] autoDestruct = newObj.GetComponentsInChildren<CFX_AutoDestructShuriken>(true);
 			foreach(CFX_AutoDestructShuriken ad in autoDestruct)
@@ -166,9 +138,6 @@ public class CFX_SpawnSystem : MonoBehaviour
 			
 			if(hideObjectsInHierarchy)
 				newObj.hideFlags = HideFlags.HideInHierarchy;
-
-			if(spawnAsChildren)
-				newObj.transform.parent = this.transform;
 		}
 	}
 	
@@ -178,7 +147,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		
 		if(!instantiatedObjects.ContainsKey(uniqueId))
 		{
-			Debug.LogWarning("[CFX_SpawnSystem.removeObjectsFromPool()] There aren't any preloaded object for: " + sourceObject.name + " (ID:" + uniqueId + ")\n", this.gameObject);
+			Debug.LogWarning("[CFX_SpawnSystem.removeObjectsFromPool()] There aren't any preloaded object for: " + sourceObject.name + " (ID:" + uniqueId + ")");
 			return;
 		}
 		
@@ -194,22 +163,11 @@ public class CFX_SpawnSystem : MonoBehaviour
 		instantiatedObjects.Remove(uniqueId);
 		poolCursors.Remove(uniqueId);
 	}
-
-	private void increasePoolCursor(int uniqueId)
-	{
-		instance.poolCursors[uniqueId]++;
-		if(instance.poolCursors[uniqueId] >= instance.instantiatedObjects[uniqueId].Count)
-		{
-			instance.poolCursors[uniqueId] = 0;
-		}
-	}
-
-	//--------------------------------
-
+	
 	void Awake()
 	{
 		if(instance != null)
-			Debug.LogWarning("CFX_SpawnSystem: There should only be one instance of CFX_SpawnSystem per Scene!\n", this.gameObject);
+			Debug.LogWarning("CFX_SpawnSystem: There should only be one instance of CFX_SpawnSystem per Scene!");
 		
 		instance = this;
 	}
