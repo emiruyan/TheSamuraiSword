@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoSingleton<GameManager>
    public EnemyController enemyController;
    public SpawnController spawnController;
    public ObjectPoolPattern objectPoolPattern;
-   public AttackController attackController;
+   [FormerlySerializedAs("attackController")] public PlayerAttackController playerAttackController;
    
    
    public List<EnemyController> enemyList;
