@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyType enemyType;
     [SerializeField] private float enemyDistance;
+    [SerializeField] private ParticleSystem enemyDeadParticle;
     
     public NavMeshAgent enemyAi;
     Transform playerTransform;
@@ -74,6 +75,7 @@ public class EnemyController : MonoBehaviour
         {
             
             enemyAnim.SetBool("isDead",true);
+            enemyDeadParticle.Play();
             StartCoroutine(DestroyEnemy());
             GameManager.Instance.RemoveEnemy(this);
         }
@@ -83,6 +85,6 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.8f);
         gameObject.SetActive(false);
-        //TODO: Particle Effect oynatılacak
+
     }
 }

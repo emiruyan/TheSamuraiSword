@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.Serialization;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -12,13 +13,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private JoystickController Joystick;
     [SerializeField] private NavMeshAgent Player;
-    RaycastHit hit; 
-    private int playerHealth;
+    [SerializeField] private ParticleSystem playerDeadFX;
+    [SerializeField] private int playerHealth;
     public Animator playerAnimator;
+   
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
+
+    private void Awake()
+    {
+    }
 
     private void Start()
     {
@@ -174,18 +180,20 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isAttack",false);
             }
         }
+        
     }
 
-    public void PlayerDead()
-    {
-        playerHealth -= 10;
-        
-        if (playerHealth <= 0)
-        {
-           playerAnimator.SetBool("isPlayerDead", true);
-           Time.timeScale = .5f;
-           //TODO: Player death particle effect
-           //TODO: Player death UI paneli aktif
-        }
-    }
+    // public void PlayerDead()
+    // {
+    //     playerHealth -= 10;
+    //     
+    //     if (playerHealth == 0)
+    //     {
+    //         playerAnimator.SetBool("isPlayerDead", true);
+    //         Time.timeScale = .5f;
+    //         playerDeadFX.Play();
+    //         //Destroy(playerDeadParticle);
+    //        //TODO: Player death UI paneli aktif
+    //     }
+    //}
 }

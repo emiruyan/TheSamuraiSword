@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttackController : MonoBehaviour
 {
+    public ParticleSystem playerAttackFx;
+    
     private void OnTriggerEnter(Collider other)
     {
         var enemy = other.gameObject.GetComponent<EnemyController>();
@@ -12,8 +14,9 @@ public class PlayerAttackController : MonoBehaviour
         {
             if (enemy != null)
            {
-               Debug.Log("attack");
                enemy.EnemyDeath();
+               playerAttackFx.transform.position = transform.position;
+               playerAttackFx.Play();
            }
         }
     }
