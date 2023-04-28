@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyType enemyType;
     [SerializeField] private float enemyDistance;
     [SerializeField] private ParticleSystem enemyDeadParticle;
+    [SerializeField] private Transform deadEnemyParent;
     
     public NavMeshAgent enemyAi;
     Transform playerTransform;
@@ -27,8 +28,6 @@ public class EnemyController : MonoBehaviour
         enemySpeed = enemyType.speed;
         enemyHealth = enemyType.health;
         enemyDamage = enemyType.damage;
-
-        enemyType.health = 100;
     }
 
     private void Awake()
@@ -36,6 +35,7 @@ public class EnemyController : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
         enemyRb = GetComponent<Rigidbody>();
         playerTransform = GameManager.Instance.playerController.transform;
+        enemyType.health = 100;
     }
 
     private void Update()
@@ -60,6 +60,7 @@ public class EnemyController : MonoBehaviour
             enemyAnim.SetBool("isInRange", false);
             enemyAi.speed = 7;
         }
+        
     }
     
     private void EnemyMove()
@@ -69,15 +70,18 @@ public class EnemyController : MonoBehaviour
 
     public void EnemyDeath()
     {
-        enemyType.health -= 30;
+        enemyHealth -= 30;
+        Debug.Log("enemyyy");
 
-        if (enemyType.health <= 0)
+        if (enemyHealth <= 0)
         {
-            
             enemyAnim.SetBool("isDead",true);
+            
             enemyDeadParticle.Play();
+            enemyAi.Stop();
             StartCoroutine(DestroyEnemy());
             GameManager.Instance.RemoveEnemy(this);
+            LevelManager.Instance.LevelWinCondition();
         }
     }
 

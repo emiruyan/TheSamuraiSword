@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.Serialization;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
@@ -14,21 +16,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private JoystickController Joystick;
     [SerializeField] private NavMeshAgent Player;
     [SerializeField] private ParticleSystem playerDeadFX;
-    [SerializeField] private int playerHealth;
+    [SerializeField] public int playerHealth;
     public Animator playerAnimator;
    
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
-
-    private void Awake()
-    {
-    }
+    
 
     private void Start()
     {
-        playerHealth = 100;
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -134,35 +133,10 @@ public class PlayerController : MonoBehaviour
         return StartPosition;
     }
 
-    // private void OnGUI()
-    // {
-    //     GUIStyle labelStyle = new GUIStyle()
-    //     {
-    //         fontSize = 24,
-    //         normal = new GUIStyleState()
-    //         {
-    //             textColor = Color.white
-    //         }
-    //     };
-    //     if (MovementFinger != null)
-    //     {
-    //         GUI.Label(new Rect(10, 35, 100, 20),
-    //             $"Finger Start Position: {MovementFinger.currentTouch.startScreenPosition}", labelStyle);
-    //         GUI.Label(new Rect(10, 65, 100, 20),
-    //             $"Finger Current Position: {MovementFinger.currentTouch.screenPosition}", labelStyle);
-    //     }
-    //     else
-    //     {
-    //         GUI.Label(new Rect(10, 35, 100, 20), "No Current Movement Touch", labelStyle);
-    //     }
-    //
-    //     GUI.Label(new Rect(10, 10, 100, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
-    // }
-
-
     private void PlayerRangeCalculate()
     {
         var enemies = GameManager.Instance.enemyList;
+        var block = GameManager.Instance.blockButton;
 
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -172,28 +146,47 @@ public class PlayerController : MonoBehaviour
             if (distance < minDistance)
             {
                 playerAnimator.SetBool("isAttack",true);
+                playerAnimator.SetBool("isHit",false);
                 Debug.Log("Enemy in range");
+                GameManager.Instance.blockButton.gameObject.SetActive(true);
                 break;
             }
             else
             {
                 playerAnimator.SetBool("isAttack",false);
+                Debug.Log("Enemy is not range");
+                GameManager.Instance.blockButton.gameObject.SetActive(false);
             }
         }
         
     }
 
-    // public void PlayerDead()
-    // {
-    //     playerHealth -= 10;
-    //     
-    //     if (playerHealth == 0)
-    //     {
-    //         playerAnimator.SetBool("isPlayerDead", true);
-    //         Time.timeScale = .5f;
-    //         playerDeadFX.Play();
-    //         //Destroy(playerDeadParticle);
-    //        //TODO: Player death UI paneli aktif
-    //     }
-    //}
+     public void PlayerDead()
+     {
+         playerHealth -= 10;
+ 
+         if (playerHealth == 0)
+         {
+             playerAnimator.SetBool("isPlayerDead", true);
+             Time.timeScale = .5f;
+             playerDeadFX.Play();
+             StartCoroutine(GameOverPanel());
+         }
+    }
+
+     IEnumerator GameOverPanel()
+     {
+         yield return new WaitForSeconds(1.5f);
+         GameManager.Instance.gameOverPanel.SetActive(true);
+         
+     }
+
+     public void BlockEnemyHit()
+     {
+         playerAnimator.SetBool("isHit",true);
+         playerHealth += 1;
+     }
+     
 }
+
+

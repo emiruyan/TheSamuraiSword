@@ -9,12 +9,11 @@ public class EnemyAttackController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //GameManager.Instance.playerController.PlayerDead();
-           // GameManager.Instance.playerController.playerAnimator.SetTrigger("getHit");
+           // GameManager.Instance.playerController.PlayerDead();
         }
         else
         {
-           // GameManager.Instance.playerController.playerAnimator.SetBool("isGetHit",false);
+           // GameManager.Instance.playerController.playerAnimator.SetBool("isHit",false);
         }
     }
 }

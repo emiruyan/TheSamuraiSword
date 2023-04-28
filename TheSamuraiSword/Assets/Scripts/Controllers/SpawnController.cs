@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-  [SerializeField] private float spawnInterval;
+  [SerializeField] public float spawnInterval;
   [SerializeField] private ObjectPoolPattern objectPoolPattern = null;
   public Transform[] spawnLocation;
   private int counter = 0;
-
   private void Start()
   {
     StartCoroutine(nameof(SpawnRoutine));
@@ -22,4 +21,5 @@ public class SpawnController : MonoBehaviour
       yield return new WaitForSeconds(spawnInterval);
     }
   }
+  
 }

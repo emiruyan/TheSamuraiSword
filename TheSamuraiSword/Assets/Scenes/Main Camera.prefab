@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2182546436491040410}
   - component: {fileID: 2182546436491040411}
+  - component: {fileID: 5011588986120068387}
   - component: {fileID: 2182546436491040413}
   - component: {fileID: 2182546436491040412}
   m_Layer: 0
@@ -48,6 +49,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   lerpTime: 10
+--- !u!114 &5011588986120068387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2182546436491040415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6715ae9046a02c642aee40050562b02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &2182546436491040413
 Camera:
   m_ObjectHideFlags: 0

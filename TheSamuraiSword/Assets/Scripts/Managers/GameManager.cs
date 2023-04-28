@@ -2,23 +2,40 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+   [Header("Classes")]
    public PlayerController playerController;
    public JoystickController joystickController;
    public EnemyController enemyController;
    public SpawnController spawnController;
-   public ObjectPoolPattern objectPoolPattern;
-   [FormerlySerializedAs("attackController")] public PlayerAttackController playerAttackController;
+   public ObjectPoolPattern objectPoolPattern; 
+   public PlayerAttackController playerAttackController;
+   public LevelWinCondition levelWinCondition;
+   public Level level;
    
-   
+   [Header("Ui's")]
+   public GameObject gameOverPanel;
+
+   public Button blockButton;
+
+
    public List<EnemyController> enemyList;
+
+   
 
    public void RemoveEnemy(EnemyController enemy)
    {
       enemyList.Remove(enemy);
+   }
+
+   public void TryAgainButton()
+   {
+      SceneManager.LoadScene("MapDesign");
    }
    
 }

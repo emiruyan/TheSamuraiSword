@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ObjectPoolPattern : MonoBehaviour
+public class ObjectPoolPattern : MonoSingleton<ObjectPoolPattern>
 {
     [Serializable] //Inspector'da görüntüleyebiliyoruz
     public struct
@@ -30,11 +30,10 @@ public class ObjectPoolPattern : MonoBehaviour
         {
             pools[j].pooledObjects = new Queue<GameObject>(); //Yeni bir Queue oluşturduk
             
-            var spawnLoc = GameManager.Instance.spawnController.spawnLocation;
 
             for (int i = 0; i < pools[j].poolSize; i++) //poolSize uzunluğunda bir döngüye sokuyoruz
             {
-                GameObject newEnemy = Instantiate(pools[j].enemyPrefab,spawnLoc[j]); //Öncelikle prefableri Instantiete ediyoruz
+                GameObject newEnemy = Instantiate(pools[j].enemyPrefab); //Öncelikle prefableri Instantiete ediyoruz
                 newEnemy.SetActive(false); //Bu objeleri ilk önce kullanmayacağız sahnede kapalı şekilde bekleyecek
 
 
@@ -49,13 +48,13 @@ public class ObjectPoolPattern : MonoBehaviour
         {
             return null; //null dönsün
         }
-
+    
         GameObject newEnemy = pools[objectType].pooledObjects.Dequeue(); //İlk sıradaki objeyi çağırıyoruz
-
-        newEnemy.SetActive(true); //Bu objeyi kullanmaya başladığımız için SetActive(true) yaparak sahnede görünür hale getiriyoruz    
+    
+        newEnemy.SetActive(true); //Bu objeyi kullanmaya başladığımız için SetActive(true) yaparak sahnede görünür hale getiriyoruz  
         pools[objectType].pooledObjects
             .Enqueue(newEnemy); //Enqueue ile objeyi daha sonra tekrar kullanmak için sıramızın tekrar en sonuna ekliyoruz
-
+    
         return newEnemy;
     }
 }
