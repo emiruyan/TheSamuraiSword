@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour
     public void EnemyDeath()
     {
         enemyHealth -= 30;
-        Debug.Log("enemyyy");
+        
 
         if (enemyHealth <= 0)
         {

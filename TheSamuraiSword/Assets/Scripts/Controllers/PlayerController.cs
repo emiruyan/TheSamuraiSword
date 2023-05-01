@@ -13,15 +13,15 @@ using Vector3 = UnityEngine.Vector3;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
-    [SerializeField] private JoystickController Joystick;
-    [SerializeField] private NavMeshAgent Player;
+    [SerializeField] private JoystickController Joystick; 
+    [SerializeField] public NavMeshAgent playerAi;
     [SerializeField] private ParticleSystem playerDeadFX;
     [SerializeField] public int playerHealth;
     public Animator playerAnimator;
    
 
     private Finger MovementFinger;
-    private Vector2 MovementAmount;
+    public Vector2 MovementAmount;
 
     
 
@@ -32,14 +32,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 scaledMovement = Player.speed * Time.deltaTime * new Vector3(
+        Vector3 scaledMovement = playerAi.speed * Time.deltaTime * new Vector3(
             MovementAmount.x,
             0,
             MovementAmount.y
         );
 
-        Player.transform.LookAt(Player.transform.position + scaledMovement, Vector3.up);
-        Player.Move(scaledMovement);
+        playerAi.transform.LookAt(playerAi.transform.position + scaledMovement, Vector3.up);
+        playerAi.Move(scaledMovement);
         playerAnimator.SetFloat("moveX", MovementAmount.x);
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
 
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerRangeCalculate()
     {
         var enemies = GameManager.Instance.enemyList;
-        var block = GameManager.Instance.blockButton;
+       
 
         for (int i = 0; i < enemies.Count; i++)
         {
@@ -147,15 +147,12 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isAttack",true);
                 playerAnimator.SetBool("isHit",false);
-                Debug.Log("Enemy in range");
-                GameManager.Instance.blockButton.gameObject.SetActive(true);
+               
                 break;
             }
             else
             {
                 playerAnimator.SetBool("isAttack",false);
-                Debug.Log("Enemy is not range");
-                GameManager.Instance.blockButton.gameObject.SetActive(false);
             }
         }
         

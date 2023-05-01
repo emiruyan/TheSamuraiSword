@@ -59,15 +59,15 @@ public class LevelManager : MonoSingleton<LevelManager>
     {
         SetLevel();
         levelFinished.Invoke();
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("MapDesign");
     }
 
-    private void SetLevel()
+    public void SetLevel()
     {
         PlayerPrefs.SetInt(Constants.LevelKey, GetLevel() + 1);
     }
 
-    private int GetLevel()
+    public int GetLevel()
     {
         var level = PlayerPrefs.GetInt(Constants.LevelKey, 0);
         return level;

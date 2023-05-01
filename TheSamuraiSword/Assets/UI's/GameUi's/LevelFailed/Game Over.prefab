@@ -121,7 +121,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME OVER
+  m_Text: Level
 --- !u!114 &6422865695898638425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,12 +245,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1004921319563231187, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
       propertyPath: m_Name
-      value: Button Round with Icon 1
+      value: TryAgainButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717300, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9adf43eb9355e4e33a33865a98681041, type: 3}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 155.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320253717303, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e6a1c97d6c53470c89561fa57bfaebf, type: 3}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelEndCondition, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004921320346538208, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1004921320346538209, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2736a4a2d5cb84a68994f5df711c9be6, type: 3}
+      objectReference: {fileID: 21300000, guid: 6709c45237c054afb8e6580ae7d823c4, type: 3}
     - target: {fileID: 1004921320346538209, guid: 25dcbb0487900364bb3006690f5b71be, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -296,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 6087480738488048877, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 226e0a1c19878434a9f3b884c71ce988, type: 3}
+      objectReference: {fileID: 21300000, guid: c61ba29088fe341479843cffec8042ff, type: 3}
     - target: {fileID: 6087480738939585752, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
       propertyPath: m_Name
       value: Panel Style 3
@@ -403,6 +459,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6422865695567207956}
     m_Modifications:
+    - target: {fileID: 1566806030891242407, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Name
+      value: Flag
+      objectReference: {fileID: 0}
     - target: {fileID: 1566806031142313216, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
       propertyPath: m_Name
       value: Level Failed
@@ -490,6 +550,26 @@ PrefabInstance:
     - target: {fileID: 1566806031142313217, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566806031762304701, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559011860396480395, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559011860396480395, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2967c2ae60ea6425c9b9cb564f582ab5, type: 3}
+    - target: {fileID: 8339919834690194504, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9946e0367c2ea49c78b8c40b689578b7, type: 3}
+    - target: {fileID: 8656809349918360094, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ad4bcbdaccb4904a71ea1e79d8b114, type: 3}

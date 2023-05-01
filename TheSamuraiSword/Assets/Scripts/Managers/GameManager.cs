@@ -15,14 +15,10 @@ public class GameManager : MonoSingleton<GameManager>
    public SpawnController spawnController;
    public ObjectPoolPattern objectPoolPattern; 
    public PlayerAttackController playerAttackController;
-   public LevelWinCondition levelWinCondition;
    public Level level;
    
    [Header("Ui's")]
    public GameObject gameOverPanel;
-
-   public Button blockButton;
-
 
    public List<EnemyController> enemyList;
 
