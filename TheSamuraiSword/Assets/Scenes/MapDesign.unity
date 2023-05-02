@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelFailedPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5578160278317204664, guid: 68c3fd93bfcf3d94c9a0c81f3b0a428c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5892520276109303696, guid: 68c3fd93bfcf3d94c9a0c81f3b0a428c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -474,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5892520276109303696, guid: 68c3fd93bfcf3d94c9a0c81f3b0a428c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5892520276109303696, guid: 68c3fd93bfcf3d94c9a0c81f3b0a428c, type: 3}
       propertyPath: m_AnchorMax.x
