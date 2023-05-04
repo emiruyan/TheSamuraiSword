@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private JoystickController Joystick; 
     [SerializeField] public NavMeshAgent playerAi;
     [SerializeField] private ParticleSystem playerDeadFX;
-    [SerializeField] public int playerHealth;
+     public int playerHealth;
+    public int playerMaxHealth= 100;
     public Animator playerAnimator;
    
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
 
         PlayerRangeCalculate();
+        BlockEnemyHit();
     }
     
 
@@ -146,7 +148,7 @@ public class PlayerController : MonoBehaviour
             if (distance < minDistance)
             {
                 playerAnimator.SetBool("isAttack",true);
-                playerAnimator.SetBool("isHit",false);
+//                playerAnimator.SetBool("isHit",false);
                
                 break;
             }
@@ -167,6 +169,7 @@ public class PlayerController : MonoBehaviour
              playerAnimator.SetBool("isPlayerDead", true);
              Time.timeScale = .5f;
              playerDeadFX.Play();
+             playerAi.speed = 0;
              StartCoroutine(GameOverPanel());
          }
     }
@@ -180,8 +183,21 @@ public class PlayerController : MonoBehaviour
 
      public void BlockEnemyHit()
      {
-         playerAnimator.SetBool("isHit",true);
-         playerHealth += 1;
+         if (playerHealth == 75)
+         {
+             Debug.Log("dfhgddh");
+             playerAnimator.SetInteger("playerHealth",75);
+         }
+
+         if (playerHealth == 50)
+         {
+             playerAnimator.SetInteger("playerHealth",50);
+         }
+
+         if (playerHealth == 25)
+         {
+             playerAnimator.SetInteger("playerHealth",25);
+         }
      }
      
 }

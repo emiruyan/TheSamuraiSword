@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     [Header("Scriptable Variables")]
     public float enemySpeed;
     public int enemyHealth;
+    public int enemyMaxHealth = 100;
     public int enemyDamage;
 
     private void Start()

@@ -108,9 +108,6 @@ public class LevelManager : MonoSingleton<LevelManager>
         {
             Debug.Log("next level");
             playeranim.SetBool("isAttack",false);
-            //TODO: Next Level Collider
-            //TODO: Next Level Animation
-            //TODO: Load Next Scene
         }
     }
 }
