@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
 
         PlayerRangeCalculate();
-        BlockEnemyHit();
+      
     }
     
 
@@ -148,8 +148,7 @@ public class PlayerController : MonoBehaviour
             if (distance < minDistance)
             {
                 playerAnimator.SetBool("isAttack",true);
-//                playerAnimator.SetBool("isHit",false);
-               
+
                 break;
             }
             else
@@ -179,26 +178,9 @@ public class PlayerController : MonoBehaviour
          yield return new WaitForSeconds(1.5f);
          GameManager.Instance.gameOverPanel.SetActive(true);
          
+
      }
-
-     public void BlockEnemyHit()
-     {
-         if (playerHealth == 75)
-         {
-             Debug.Log("dfhgddh");
-             playerAnimator.SetInteger("playerHealth",75);
-         }
-
-         if (playerHealth == 50)
-         {
-             playerAnimator.SetInteger("playerHealth",50);
-         }
-
-         if (playerHealth == 25)
-         {
-             playerAnimator.SetInteger("playerHealth",25);
-         }
-     }
+     
      
 }
 

@@ -592,6 +592,8 @@ MonoBehaviour:
   enemyDistance: 5
   enemyDeadParticle: {fileID: 1482970537085940522}
   deadEnemyParent: {fileID: 0}
+  enemyCollider: {fileID: 5797167629729989928}
+  shuriken: {fileID: 193634, guid: 8dbcc69602c9c42488e0ea20ef28bfa9, type: 3}
   enemyAi: {fileID: 1617084073}
   enemySpeed: 0
   enemyHealth: 0

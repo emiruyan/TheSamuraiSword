@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -8,9 +9,11 @@ using UnityEngine.Serialization;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyType enemyType;
-    [SerializeField] private float enemyDistance;
-    [SerializeField] private ParticleSystem enemyDeadParticle;
-    [SerializeField] private Transform deadEnemyParent;
+    [SerializeField] private float enemyDistance; 
+    public ParticleSystem enemyDeadParticle;
+    public Collider enemyCollider;
+    public Transform enemyTransform;
+    public GameObject shuriken;
     
     public NavMeshAgent enemyAi;
     Transform playerTransform;
@@ -35,6 +38,7 @@ public class EnemyController : MonoBehaviour
     {
         enemyAnim = GetComponent<Animator>();
         enemyRb = GetComponent<Rigidbody>();
+        enemyTransform = GetComponent<Transform>();
         playerTransform = GameManager.Instance.playerController.transform;
         enemyType.health = 100;
     }
@@ -76,13 +80,16 @@ public class EnemyController : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
+            enemyCollider.enabled = false;
+            GameManager.Instance.enemyDeathCounter.EnemyCounter();
             enemyAnim.SetBool("isDead",true);
-            
+            Instantiate(shuriken,new Vector3(transform.position.x,1,transform.position.z) ,transform.rotation);
             enemyDeadParticle.Play();
             enemyAi.Stop();
             StartCoroutine(DestroyEnemy());
             GameManager.Instance.RemoveEnemy(this);
             LevelManager.Instance.LevelWinCondition();
+            
         }
     }
 
@@ -90,6 +97,5 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.8f);
         gameObject.SetActive(false);
-
     }
 }

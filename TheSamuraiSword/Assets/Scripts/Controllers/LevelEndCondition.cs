@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelEndCondition : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class LevelEndCondition : MonoBehaviour
     public Light levelEndLight2;
     public ParticleSystem levelEndParticle1;
     public ParticleSystem levelEndParticle2;
+    public Text enemyWinCounter;
 
     private void Start()
     {
@@ -29,19 +31,18 @@ public class LevelEndCondition : MonoBehaviour
         levelEndParticle2.Play();
         playerNavMesh.speed = 0;
         StartCoroutine(LevelWinPanel());
-        //TODO: Level Win Panel Active
 
     }
 
     public void NextLevelButton()
     {
-        Debug.Log("Button is clicked");
         LevelManager.Instance.LevelFinish();
     }
 
     IEnumerator LevelWinPanel()
     {
         yield return new WaitForSeconds(4f);
+        enemyWinCounter.text = GameManager.Instance.enemyDeathCounter.enemyDeathBar.value.ToString();
         levelWinPanel.SetActive(true);
     }
 }

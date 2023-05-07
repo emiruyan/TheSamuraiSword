@@ -16,9 +16,13 @@ public class GameManager : MonoSingleton<GameManager>
    public ObjectPoolPattern objectPoolPattern; 
    public PlayerAttackController playerAttackController;
    public Level level;
+   public EnemyDeathCounter enemyDeathCounter;
+   public DropController dropController;
    
-   [Header("Ui's")]
+
+   [Header("Ui's")] 
    public GameObject gameOverPanel;
+  
 
    public List<EnemyController> enemyList;
 

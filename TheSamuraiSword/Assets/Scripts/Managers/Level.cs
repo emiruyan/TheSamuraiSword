@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Level : MonoBehaviour
 {
@@ -9,9 +11,16 @@ public class Level : MonoBehaviour
    public Transform[] spawnLocation;
    private int counter = 0;
    public int spawnCount;
-   
+
+   private void Start()
+   {
+     
+      GameManager.Instance.enemyDeathCounter.enemyDeathBar.maxValue = enemyCount;
+   }
+
    public void LevelStart()
    {
+      
       StartCoroutine(nameof(SpawnRoutine));
    }
    

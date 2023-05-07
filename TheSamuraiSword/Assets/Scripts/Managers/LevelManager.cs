@@ -84,6 +84,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         }
 
         var level = Instantiate(levels[GetLevel()], transform);
+        GameManager.Instance.enemyDeathCounter.enemyDeathBar.maxValue = GameManager.Instance.level.enemyCount;  
         level.gameObject.name = $"Level {GetLevel() + 1}";
         currentLevel = level;
     }

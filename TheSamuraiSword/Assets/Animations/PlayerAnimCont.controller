@@ -139,7 +139,7 @@ AnimatorStateMachine:
     m_Position: {x: 230, y: 800, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5083599912210184612}
-    m_Position: {x: 560, y: 770, z: 0}
+    m_Position: {x: 820, y: 890, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -475,10 +475,10 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: playerHealth
-    m_Type: 3
+  - m_Name: getHit
+    m_Type: 4
     m_DefaultFloat: 0
-    m_DefaultInt: 100
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:

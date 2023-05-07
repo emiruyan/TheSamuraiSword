@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 1
+  enemyCount: 4
   spawnInterval: 2
   spawnLocation:
   - {fileID: 1348864867876669005}
@@ -24934,6 +24934,7 @@ MonoBehaviour:
   levelEndLight2: {fileID: 925395272163247466}
   levelEndParticle1: {fileID: 1087466058706850785}
   levelEndParticle2: {fileID: 1087466057583094146}
+  enemyWinCounter: {fileID: 5763358475575381810}
 --- !u!1 &3923258170645420721
 GameObject:
   m_ObjectHideFlags: 0
@@ -28134,6 +28135,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
+--- !u!114 &5763358475575381810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2291514088574707753, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
+  m_PrefabInstance: {fileID: 5779974380602009371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7406010053164906303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3959217078547353636, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}

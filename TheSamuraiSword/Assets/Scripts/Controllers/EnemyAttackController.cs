@@ -9,8 +9,7 @@ public class EnemyAttackController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           
-           GameManager.Instance.playerController.PlayerDead();
+            GameManager.Instance.playerController.PlayerDead();
         }
   
     }
