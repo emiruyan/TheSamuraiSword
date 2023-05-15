@@ -10,15 +10,19 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyType enemyType;
     [SerializeField] private float enemyDistance; 
+    [SerializeField] private AudioClip deathClip;
     public ParticleSystem enemyDeadParticle;
     public Collider enemyCollider;
     public Transform enemyTransform;
     public GameObject shuriken;
-    
+
+    public List<int> enemyDamageList;
+
     public NavMeshAgent enemyAi;
     Transform playerTransform;
     private Animator enemyAnim;
     private Rigidbody enemyRb;
+    
 
     [Header("Scriptable Variables")]
     public float enemySpeed;
@@ -75,17 +79,24 @@ public class EnemyController : MonoBehaviour
 
     public void EnemyDeath()
     {
-        enemyHealth -= 30;
-        
+        enemyHealth -= 20;
 
+        foreach (var damageValue in enemyDamageList)
+        {
+            if (damageValue == enemyHealth)
+            {
+                enemyAnim.SetTrigger("GetHit");
+            }
+        }
         if (enemyHealth <= 0)
         {
             enemyCollider.enabled = false;
             GameManager.Instance.enemyDeathCounter.EnemyCounter();
-            enemyAnim.SetBool("isDead",true);
-            Instantiate(shuriken,new Vector3(transform.position.x,1,transform.position.z) ,transform.rotation);
+            enemyAnim.SetBool("isDead",true); 
+            InstantiateShuriken();
             enemyDeadParticle.Play();
             enemyAi.Stop();
+            SoundManager.Instance.PlaySound(deathClip);
             StartCoroutine(DestroyEnemy());
             GameManager.Instance.RemoveEnemy(this);
             LevelManager.Instance.LevelWinCondition();
@@ -98,4 +109,11 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(1.8f);
         gameObject.SetActive(false);
     }
+    public void InstantiateShuriken()
+    {
+        GameObject cloneShuriken = Instantiate(shuriken,new Vector3(transform.position.x,1,transform.position.z) ,transform.rotation);
+    }
+    
 }
+
+

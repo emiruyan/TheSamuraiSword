@@ -8,14 +8,14 @@ using UnityEngine.UI;
 public class LevelFailedPanel : MonoBehaviour
 {
     public Text enemyCountText;
+   
 
     private void OnEnable()
     {
         var enemies = GameManager.Instance.enemyDeathCounter.enemyDeathBar.value.ToString();
-     
-        
+
         enemyCountText.text = enemies;
-       
+
     }
     
 }

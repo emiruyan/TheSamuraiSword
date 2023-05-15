@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerAttackController : MonoBehaviour
 {
-    public ParticleSystem playerAttackFx;
+    public ParticleSystem playerAttackFx; 
+    [SerializeField] private AudioClip swordSlashClip;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +18,7 @@ public class PlayerAttackController : MonoBehaviour
            {
                enemy.EnemyDeath();
                playerAttackFx.transform.position = transform.position;
+               SoundManager.Instance.PlaySound(swordSlashClip);
                playerAttackFx.Play();
            }
         }

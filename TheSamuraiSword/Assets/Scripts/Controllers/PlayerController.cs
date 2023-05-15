@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
@@ -13,18 +14,21 @@ using Vector3 = UnityEngine.Vector3;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
-    [SerializeField] private JoystickController Joystick; 
-    [SerializeField] public NavMeshAgent playerAi;
+    [SerializeField] private JoystickController Joystick;
+    [SerializeField] private AudioClip healtPickUpSfx;
+    [SerializeField] private AudioClip playerDeadSound;
     [SerializeField] private ParticleSystem playerDeadFX;
-     public int playerHealth;
-    public int playerMaxHealth= 100;
+    [SerializeField] private ParticleSystem playerHealthFx;
+
+    public List<int> damageAnimationList;
+
+    public int playerHealth;
+    public int playerMaxHealth = 100;
+    public NavMeshAgent playerAi;
     public Animator playerAnimator;
-   
 
     private Finger MovementFinger;
     public Vector2 MovementAmount;
-
-    
 
     private void Start()
     {
@@ -45,7 +49,6 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
 
         PlayerRangeCalculate();
-      
     }
     
 
@@ -162,10 +165,18 @@ public class PlayerController : MonoBehaviour
      public void PlayerDead()
      {
          playerHealth -= 10;
- 
+         foreach (var damageValue in damageAnimationList)
+         {
+             if (damageValue==playerHealth)
+             {
+                 playerAnimator.SetTrigger("GetHit");
+             }
+         }
+         
          if (playerHealth == 0)
          {
              playerAnimator.SetBool("isPlayerDead", true);
+             SoundManager.Instance.PlaySound(playerDeadSound);
              Time.timeScale = .5f;
              playerDeadFX.Play();
              playerAi.speed = 0;
@@ -180,8 +191,17 @@ public class PlayerController : MonoBehaviour
          
 
      }
-     
-     
+     private void OnTriggerEnter(Collider other)
+     {
+         if (other.gameObject.CompareTag("Health"))
+         {
+             SoundManager.Instance.PlaySound(healtPickUpSfx);
+             playerHealth += 40;
+             playerHealthFx.Play();
+             Destroy(other.gameObject);
+             playerHealthFx.Stop();
+         }
+     }
 }
 
 

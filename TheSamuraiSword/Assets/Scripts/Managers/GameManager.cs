@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -11,6 +12,7 @@ public class GameManager : MonoSingleton<GameManager>
    [Header("Classes")]
    public PlayerController playerController;
    public JoystickController joystickController;
+   public CameraController cameraController;
    public EnemyController enemyController;
    public SpawnController spawnController;
    public ObjectPoolPattern objectPoolPattern; 
@@ -18,15 +20,22 @@ public class GameManager : MonoSingleton<GameManager>
    public Level level;
    public EnemyDeathCounter enemyDeathCounter;
    public DropController dropController;
+   public ShurikenUi shurikenUi;
    
 
    [Header("Ui's")] 
    public GameObject gameOverPanel;
+   public TextMeshProUGUI scoreTextTmp;
+   public int score= 0;
+   public TextMeshProUGUI tapToPlayText;
   
 
    public List<EnemyController> enemyList;
 
-   
+   private void Start()
+   {
+    
+   }
 
    public void RemoveEnemy(EnemyController enemy)
    {

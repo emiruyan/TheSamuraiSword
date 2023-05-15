@@ -6,14 +6,14 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float lerpTime;
-    private Vector3 offset;
+    public Vector3 offset;
 
     private void Start()
     {
         offset = transform.position - playerTransform.transform.position;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         Vector3 newPos = Vector3.Lerp(transform.position, playerTransform.position + offset, lerpTime * Time.deltaTime);
         transform.position = newPos;
