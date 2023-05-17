@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 3185510600906265419}
   - component: {fileID: 6817892048891286603}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: EnemyTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5620334527900584254
 Transform:
   m_ObjectHideFlags: 0
@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162487901325914240}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 1.76, z: 149.43}
+  m_LocalRotation: {x: 0, y: -0.7132504, z: 0, w: 0.7009094}
+  m_LocalPosition: {x: 0.3, y: 1.76, z: 118.1}
   m_LocalScale: {x: 5.12, y: 3.25, z: 14.62}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 984066655016728091}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -91, z: 0}
 --- !u!33 &2776090135716135781
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1725,8 +1725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 4
-  spawnInterval: 2
+  enemyCount: 12
+  spawnInterval: 4
   spawnLocation:
   - {fileID: 1348864867876669005}
   - {fileID: 5999365066640535198}
@@ -25159,7 +25159,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3627643066954397597}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -25176,6 +25176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0866b84f2cb074da2d358a6c36f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndCollider: {fileID: 7847343692814672815}
   levelWinPanel: {fileID: 7406010053164906303}
   levelEndLight1: {fileID: 925395271172570889}
   levelEndLight2: {fileID: 925395272163247466}
@@ -25228,7 +25229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7557990775064456690
 Transform:
   m_ObjectHideFlags: 0
@@ -25237,7 +25238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4596786801517862014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.9, y: 0, z: 148.2}
+  m_LocalPosition: {x: 47.1, y: 0, z: 144.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28581,6 +28582,14 @@ PrefabInstance:
     - target: {fileID: 1614283212296996495, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: m_Name
       value: HealthUpgrader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: lifetime
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: repeatTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.size

@@ -21,7 +21,6 @@ public class GameManager : MonoSingleton<GameManager>
    public EnemyDeathCounter enemyDeathCounter;
    public DropController dropController;
    public ShurikenUi shurikenUi;
-   
 
    [Header("Ui's")] 
    public GameObject gameOverPanel;
@@ -31,11 +30,7 @@ public class GameManager : MonoSingleton<GameManager>
   
 
    public List<EnemyController> enemyList;
-
-   private void Start()
-   {
-    
-   }
+   
 
    public void RemoveEnemy(EnemyController enemy)
    {

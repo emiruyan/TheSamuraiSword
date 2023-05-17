@@ -6,17 +6,36 @@ using UnityEngine.UI;
 
 public class LevelEndCondition : MonoBehaviour
 {
+    public Collider levelEndCollider;
     public GameObject levelWinPanel;
     public Light levelEndLight1;
     public Light levelEndLight2;
     public ParticleSystem levelEndParticle1;
     public ParticleSystem levelEndParticle2;
     public Text enemyWinCounter;
+    private bool isLevelEnd = false;
 
     private void Start()
     {
         levelEndParticle1.Stop();
         levelEndParticle2.Stop();
+    }
+
+    private void Update()
+    {
+        
+        ActiveCollider();
+        // var enemies = GameManager.Instance.enemyList;
+        // if (!isLevelEnd)
+        // {
+        //     if (enemies.Count == 0)
+        //     {
+        //         Debug.Log("levelend");
+        //         levelEndCollider.isTrigger = true;
+        //     }
+        //
+        //     isLevelEnd = true;
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,5 +63,16 @@ public class LevelEndCondition : MonoBehaviour
         yield return new WaitForSeconds(4f);
         enemyWinCounter.text = GameManager.Instance.enemyDeathCounter.enemyDeathBar.value.ToString();
         levelWinPanel.SetActive(true);
+    }
+
+    private void ActiveCollider()
+    {
+        var enemies = GameManager.Instance.enemyList;
+        
+        if (enemies.Count == 0)
+        {
+            Debug.Log("levelend");
+            levelEndCollider.isTrigger = true;
+        }
     }
 }

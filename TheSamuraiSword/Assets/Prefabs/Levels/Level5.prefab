@@ -24074,7 +24074,7 @@ Transform:
   m_GameObject: {fileID: 241912413461261056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -15.125, y: 0.6, z: 108.6616}
-  m_LocalScale: {x: 16.06382, y: 13.189586, z: 30.34081}
+  m_LocalScale: {x: 39.242306, y: 13.189586, z: 30.34081}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241912413579145481}
@@ -24608,6 +24608,7 @@ Transform:
   - {fileID: 2902509864250100339}
   - {fileID: 8172515886940033790}
   - {fileID: 1835442009259868637}
+  - {fileID: 1028529298296156990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24652,8 +24653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 5
-  spawnInterval: 2
+  enemyCount: 16
+  spawnInterval: 5
   spawnLocation:
   - {fileID: 7675352255318419740}
   - {fileID: 1760016828214148723}
@@ -25402,7 +25403,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2433373436218499537}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -25419,6 +25420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0866b84f2cb074da2d358a6c36f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndCollider: {fileID: 3384330044426447304}
   levelWinPanel: {fileID: 8222446829245433606}
   levelEndLight1: {fileID: 154463237457020576}
   levelEndLight2: {fileID: 154463236253184291}
@@ -25573,12 +25575,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6700957570971828429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.2, y: 0, z: 53.1}
+  m_LocalPosition: {x: 2.6, y: 0, z: 150.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241912413579145481}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7303418779607321958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028529298296156990}
+  m_Layer: 0
+  m_Name: HealthSpawnLocation (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1028529298296156990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303418779607321958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.04, y: 0.9, z: 154.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 241912413579145481}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8145465545354889639
 GameObject:
@@ -28626,6 +28659,18 @@ PrefabInstance:
       value: HealthUpgrader
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: lifetime
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: repeatTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: healthLocations.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.data[0]
       value: 
       objectReference: {fileID: 4497800336334416030}
@@ -28649,6 +28694,10 @@ PrefabInstance:
       propertyPath: healthLocations.Array.data[5]
       value: 
       objectReference: {fileID: 1835442009259868637}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: healthLocations.Array.data[6]
+      value: 
+      objectReference: {fileID: 1028529298296156990}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
 --- !u!4 &1716405187624943731 stripped

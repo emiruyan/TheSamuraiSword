@@ -20245,6 +20245,7 @@ Transform:
   - {fileID: 5911715523177888921}
   - {fileID: 8799589424338805841}
   - {fileID: 7610193115635525240}
+  - {fileID: 6664221901853407097}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20289,8 +20290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 3
-  spawnInterval: 2
+  enemyCount: 12
+  spawnInterval: 5
   spawnLocation:
   - {fileID: 1322921691907979759}
   - {fileID: 7581111589480517741}
@@ -22955,7 +22956,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4912763741109863402}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -22972,6 +22973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0866b84f2cb074da2d358a6c36f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndCollider: {fileID: 6186720435876966075}
   levelWinPanel: {fileID: 1385569578599269602}
   levelEndLight1: {fileID: 1415395019792381017}
   levelEndLight2: {fileID: 1415395019284516293}
@@ -23070,6 +23072,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1358907539429014916}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6582925839844956990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6664221901853407097}
+  m_Layer: 0
+  m_Name: HealthSpawnLocation (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6664221901853407097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582925839844956990}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 0.9, z: 37.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1358907539429014916}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1358907539175512355
 PrefabInstance:
@@ -25463,8 +25496,16 @@ PrefabInstance:
       value: HealthUpgrader
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: lifetime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: repeatTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.data[0]
@@ -25482,6 +25523,10 @@ PrefabInstance:
       propertyPath: healthLocations.Array.data[3]
       value: 
       objectReference: {fileID: 7610193115635525240}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: healthLocations.Array.data[4]
+      value: 
+      objectReference: {fileID: 6664221901853407097}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
 --- !u!4 &3302116755016193584 stripped

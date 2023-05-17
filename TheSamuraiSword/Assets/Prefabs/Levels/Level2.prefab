@@ -247,7 +247,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764500588589559627}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0866b84f2cb074da2d358a6c36f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndCollider: {fileID: 6065325456643105443}
   levelWinPanel: {fileID: 3350191428685664470}
   levelEndLight1: {fileID: 8741671040029347242}
   levelEndLight2: {fileID: 8741671038873994992}
@@ -21416,8 +21417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 2
-  spawnInterval: 2
+  enemyCount: 10
+  spawnInterval: 5
   spawnLocation:
   - {fileID: 923444899095561299}
   - {fileID: 7789307530736589633}
@@ -22918,6 +22919,14 @@ PrefabInstance:
     - target: {fileID: 1614283212296996495, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: m_Name
       value: HealthUpgrader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: lifetime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: repeatTime
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.data[0]

@@ -104,10 +104,9 @@ public class LevelManager : MonoSingleton<LevelManager>
     {
         var enemies = GameManager.Instance.enemyList;
         var playeranim = GameManager.Instance.playerController.playerAnimator;
-        
+
         if (enemies.Count == 0)
         {
-            Debug.Log("next level");
             playeranim.SetBool("isAttack",false);
         }
     }

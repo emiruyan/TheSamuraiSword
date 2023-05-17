@@ -10,11 +10,6 @@ public class EnemyDeathCounter : MonoBehaviour
     public Slider enemyDeathBar;
     
 
-    private void Update()
-    {
-       // EnemyCounter();
-    }
-
     private void Start()
     {
         enemyDeathBar.value = 0;

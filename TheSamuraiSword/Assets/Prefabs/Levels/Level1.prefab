@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1414792593}
   - component: {fileID: 1414792592}
   - component: {fileID: 1414792590}
-  - component: {fileID: 1414792594}
+  - component: {fileID: 93143990974693615}
   m_Layer: 0
   m_Name: LevelEnd
   m_TagString: Untagged
@@ -50,12 +50,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414792589}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1414792594
+--- !u!114 &93143990974693615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0866b84f2cb074da2d358a6c36f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndCollider: {fileID: 1414792590}
   levelWinPanel: {fileID: 543773911827883474}
   levelEndLight1: {fileID: 7087015463939549482}
   levelEndLight2: {fileID: 7087015464369148287}
@@ -823,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 7
+  enemyCount: 2
   spawnInterval: 5
   spawnLocation:
   - {fileID: 9090744062998020827}
@@ -21131,7 +21132,11 @@ PrefabInstance:
     - target: {fileID: 1409078755139949182, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1414792594}
+      objectReference: {fileID: 93143990974693615}
+    - target: {fileID: 1409078755139949182, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevelButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2961443937116801988, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
