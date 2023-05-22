@@ -6,11 +6,10 @@ using UnityEngine;
 
 public class DropController : MonoBehaviour
 {
+    public bool collected = false;
     
     [Header("Audio")]
     [SerializeField] private AudioClip collectSfx;
-    
-    public bool collected = false;
     
     private void LateUpdate()//ShurikenUi classı ve LateUpdate Shurikeni toplamayı ve Ui üzerine göndermeyi denetliyor
     {

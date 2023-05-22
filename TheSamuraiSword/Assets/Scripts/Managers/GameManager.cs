@@ -28,7 +28,7 @@ public class GameManager : MonoSingleton<GameManager>
    public int score= 0;
    public TextMeshProUGUI tapToPlayText;
   
-
+   [Header("List's")] 
    public List<EnemyController> enemyList;
    
 
@@ -37,7 +37,7 @@ public class GameManager : MonoSingleton<GameManager>
       enemyList.Remove(enemy);
    }
 
-   public void TryAgainButton()
+   public void TryAgainButton()//LevelFailedPanel Button
    {
       SceneManager.LoadScene("MapDesign");
    }

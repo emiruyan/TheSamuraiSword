@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    //Cameranın smooth bir şekilde Player'ı takip etmesi için oluşturulmuş bir class
+    
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float lerpTime;
     public Vector3 offset;

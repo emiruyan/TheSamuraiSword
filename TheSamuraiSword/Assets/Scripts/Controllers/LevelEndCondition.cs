@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelEndCondition : MonoBehaviour
 {
+    //Level sonunda yer alan bir Collider'da bulunan bir class
     [Header("Components")]
     public Collider levelEndCollider;
     public GameObject levelWinPanel;

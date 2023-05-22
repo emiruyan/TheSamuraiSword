@@ -35,7 +35,7 @@ public class LevelManager : MonoSingleton<LevelManager>
 
 
     [ContextMenu("LevelCreate")]
-    public void LevelCreate()
+    public void LevelCreate()//Level üretimi
     {
         if (currentLevel != null)
             Destroy(currentLevel.gameObject);
@@ -49,7 +49,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         currentLevel.LevelStart();
     }
 
-    public void LevelStart()
+    public void LevelStart()//Level başlangıcı
     {
         levelStarted.Invoke();
     }
@@ -73,7 +73,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         return level;
     }
 
-    private void CreateNormalLevel()
+    private void CreateNormalLevel()//Hierarchy üzerinde Spawn ettiğimiz oynanabilir levellerin üretimi
     {
         if (GetLevel() >= levels.Count)
         {
@@ -89,7 +89,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         currentLevel = level;
     }
 
-    private void CreateTestLevel()
+    private void CreateTestLevel()//Test Level Üretimi
     {
         if (testLevel != null)
         {
@@ -100,7 +100,7 @@ public class LevelManager : MonoSingleton<LevelManager>
         else
             Debug.LogError("Test level is null");
     }
-    public void LevelWinCondition()
+    public void LevelWinCondition()//Bölüm başarı ile tamamlandığında kullanılan fonksiyon
     {
         var enemies = GameManager.Instance.enemyList;
         var playeranim = GameManager.Instance.playerController.playerAnimator;

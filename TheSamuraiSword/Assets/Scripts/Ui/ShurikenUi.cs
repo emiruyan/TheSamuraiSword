@@ -15,7 +15,7 @@ public class ShurikenUi : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    public Vector3 GetIconPosition(Vector3 target)
+    public Vector3 GetIconPosition(Vector3 target)//Toplanan shurikenleri yolladığımız UI pozisyonu
     {
         Vector3 uiPos = iconTransform.position;
         uiPos.z = (target - mainCamera.transform.position).z;
