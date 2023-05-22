@@ -23,7 +23,7 @@ public class ObjectPoolPattern : MonoSingleton<ObjectPoolPattern>
         InstantiateObject();
     }
 
-    public void InstantiateObject()
+    public void InstantiateObject()//Obje Spawn'ı
     {
         
         for (int j = 0; j < pools.Length; j++) 
@@ -42,7 +42,7 @@ public class ObjectPoolPattern : MonoSingleton<ObjectPoolPattern>
         }
     }
 
-    public GameObject GetPoolObject(int objectType)
+    public GameObject GetPoolObject(int objectType)//Havuzdan obje çekme
     {
         if (objectType >= pools.Length)
         {

@@ -68,7 +68,6 @@ public class EnemyController : MonoBehaviour
             enemyAnim.SetBool("isInRange", false);
             enemyAi.speed = 7;
         }
-        
     }
     
     private void EnemyMove()//Enemy Hareketi
@@ -112,7 +111,6 @@ public class EnemyController : MonoBehaviour
     {
         GameObject cloneShuriken = Instantiate(shuriken,new Vector3(transform.position.x,1,transform.position.z) ,transform.rotation);
     }
-    
 }
 
 

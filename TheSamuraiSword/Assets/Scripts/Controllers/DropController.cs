@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class DropController : MonoBehaviour
 {
+    
+    [Header("Audio")]
     [SerializeField] private AudioClip collectSfx;
+    
     public bool collected = false;
-
-    private void Start()
-    {
-       
-    }
-
-    private void LateUpdate()
+    
+    private void LateUpdate()//ShurikenUi classı ve LateUpdate Shurikeni toplamayı ve Ui üzerine göndermeyi denetliyor
     {
         if (collected)
         {
@@ -31,7 +29,8 @@ public class DropController : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerEnter(Collider other)//Player ve shuriken çarpışma denetleyici
     {
         if (other.gameObject.CompareTag("Player"))
         {

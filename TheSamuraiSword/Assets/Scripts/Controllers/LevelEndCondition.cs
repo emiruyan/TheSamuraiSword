@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class LevelEndCondition : MonoBehaviour
 {
+    [Header("Components")]
     public Collider levelEndCollider;
     public GameObject levelWinPanel;
-    public Light levelEndLight1;
-    public Light levelEndLight2;
+    
+    [Header("VFX")]
     public ParticleSystem levelEndParticle1;
     public ParticleSystem levelEndParticle2;
+    public Light levelEndLight1;
+    public Light levelEndLight2;
+    
+    [Header("Texts")]
     public Text enemyWinCounter;
     private bool isLevelEnd = false;
 
@@ -26,7 +31,7 @@ public class LevelEndCondition : MonoBehaviour
         ActiveCollider();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//Level Bitiş Collider'ı ile Playerın çarpışması
     {
         var playerNavMesh = GameManager.Instance.playerController.playerAi;
         var playerAnim = GameManager.Instance.playerController.playerAnimator;
@@ -38,22 +43,21 @@ public class LevelEndCondition : MonoBehaviour
         levelEndParticle2.Play();
         playerNavMesh.speed = 0;
         StartCoroutine(LevelWinPanel());
-
     }
 
-    public void NextLevelButton()
+    public void NextLevelButton()//Bir sonraki levele geçiş butonu
     {
         LevelManager.Instance.LevelFinish();
     }
 
-    IEnumerator LevelWinPanel()
+    IEnumerator LevelWinPanel()//Bölüm başarı ile tamamlandığında açılan panel
     {
         yield return new WaitForSeconds(4f);
         enemyWinCounter.text = GameManager.Instance.enemyDeathCounter.enemyDeathBar.value.ToString();
         levelWinPanel.SetActive(true);
     }
 
-    private void ActiveCollider()
+    private void ActiveCollider()//Level Bitiş Collider'ı aktif hale getirme
     {
         var enemies = GameManager.Instance.enemyList;
         

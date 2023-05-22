@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerAttackController : MonoBehaviour
+public class PlayerAttackController : MonoBehaviour //Player weapon'a atanmış bir class
 {
-    public ParticleSystem playerAttackFx; 
+    [Header("Audio")]
     [SerializeField] private AudioClip swordSlashClip;
     
-    private void OnTriggerEnter(Collider other)
+    [Header("VFX")]
+    public ParticleSystem playerAttackFx; 
+    
+    private void OnTriggerEnter(Collider other)//Player weapon ile Enemy çarpışma denetleyici
     {
         var enemy = other.gameObject.GetComponent<EnemyController>();
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             if (enemy != null)
