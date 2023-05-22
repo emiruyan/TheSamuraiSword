@@ -596,6 +596,7 @@ MonoBehaviour:
   enemyCollider: {fileID: 5797167629729989928}
   enemyTransform: {fileID: 0}
   shuriken: {fileID: 193634, guid: 8dbcc69602c9c42488e0ea20ef28bfa9, type: 3}
+  footStepEnemy: {fileID: 0}
   enemyDamageList: 3c000000
   enemyAi: {fileID: 1617084073}
   enemySpeed: 0

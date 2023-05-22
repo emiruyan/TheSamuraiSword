@@ -23,19 +23,7 @@ public class LevelEndCondition : MonoBehaviour
 
     private void Update()
     {
-        
         ActiveCollider();
-        // var enemies = GameManager.Instance.enemyList;
-        // if (!isLevelEnd)
-        // {
-        //     if (enemies.Count == 0)
-        //     {
-        //         Debug.Log("levelend");
-        //         levelEndCollider.isTrigger = true;
-        //     }
-        //
-        //     isLevelEnd = true;
-        // }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,10 +57,13 @@ public class LevelEndCondition : MonoBehaviour
     {
         var enemies = GameManager.Instance.enemyList;
         
-        if (enemies.Count == 0)
+        if (!isLevelEnd)
         {
-            Debug.Log("levelend");
-            levelEndCollider.isTrigger = true;
+            if (enemies.Count == 0)
+            {
+                levelEndCollider.isTrigger = true;
+                isLevelEnd = true;
+            }
         }
     }
 }

@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5a93d140f0c9b41a3b7af55f8ca274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 2
+  enemyCount: 7
   spawnInterval: 5
   spawnLocation:
   - {fileID: 9090744062998020827}
@@ -21306,6 +21306,14 @@ PrefabInstance:
     - target: {fileID: 1614283212296996495, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: m_Name
       value: HealthUpgrader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: lifetime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
+      propertyPath: repeatTime
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8570799907469078655, guid: 4cd4a4f7a727c964db3581904e1b0ac4, type: 3}
       propertyPath: healthLocations.Array.data[0]

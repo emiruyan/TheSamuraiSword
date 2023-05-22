@@ -8,27 +8,28 @@ using UnityEngine.Serialization;
 
 public class EnemyController : MonoBehaviour
 {
+
+    [Header("Enemy Components")]
+    public NavMeshAgent enemyAi;
+    public Collider enemyCollider;
+    private Transform playerTransform;
+    private Animator enemyAnim;
+    public List<int> enemyDamageList;
+    
+    [Header("Scriptable Variables")]
     [SerializeField] private EnemyType enemyType;
     [SerializeField] private float enemyDistance; 
-    [SerializeField] private AudioClip deathClip;
-    public ParticleSystem enemyDeadParticle;
-    public Collider enemyCollider;
-    public Transform enemyTransform;
-    public GameObject shuriken;
-
-    public List<int> enemyDamageList;
-
-    public NavMeshAgent enemyAi;
-    Transform playerTransform;
-    private Animator enemyAnim;
-    private Rigidbody enemyRb;
-    
-
-    [Header("Scriptable Variables")]
     public float enemySpeed;
     public int enemyHealth;
     public int enemyMaxHealth = 100;
     public int enemyDamage;
+    public GameObject shuriken;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioClip deathClip;
+    
+    [Header("FX")]
+    public ParticleSystem enemyDeadParticle;
 
     private void Start()
     {
@@ -41,8 +42,6 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         enemyAnim = GetComponent<Animator>();
-        enemyRb = GetComponent<Rigidbody>();
-        enemyTransform = GetComponent<Transform>();
         playerTransform = GameManager.Instance.playerController.transform;
         enemyType.health = 100;
     }
@@ -52,7 +51,7 @@ public class EnemyController : MonoBehaviour
         EnemyRangeCalculate();
     }
 
-    private void EnemyRangeCalculate()
+    private void EnemyRangeCalculate()//Enemy ve Player arasındaki mesafeyi hesaplama
     {
         float minDistance = enemyDistance;
         float distance = Vector3.Distance(playerTransform.position, transform.position);
@@ -72,12 +71,12 @@ public class EnemyController : MonoBehaviour
         
     }
     
-    private void EnemyMove()
+    private void EnemyMove()//Enemy Hareketi
     {
         enemyAi.SetDestination(playerTransform.position);
     }
 
-    public void EnemyDeath()
+    public void EnemyDeath()//Enemy Ölümü
     {
         enemyHealth -= 20;
 
@@ -104,12 +103,12 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyEnemy()
+    private IEnumerator DestroyEnemy()//Enemy Yok oluşu
     {
         yield return new WaitForSeconds(1.8f);
         gameObject.SetActive(false);
     }
-    public void InstantiateShuriken()
+    public void InstantiateShuriken()//Enemyden düşen shuriken üretimi
     {
         GameObject cloneShuriken = Instantiate(shuriken,new Vector3(transform.position.x,1,transform.position.z) ,transform.rotation);
     }

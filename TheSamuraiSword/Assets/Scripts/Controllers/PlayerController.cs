@@ -13,23 +13,28 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Joystick")]
     [SerializeField] private Vector2 JoystickSize = new Vector2(300, 300);
     [SerializeField] private JoystickController Joystick;
+    private Finger MovementFinger;
+    public Vector2 MovementAmount;
+
+    [Header("Audio")]
     [SerializeField] private AudioClip healtPickUpSfx;
     [SerializeField] private AudioClip playerDeadSound;
+    
+    [Header("FX")]
     [SerializeField] private ParticleSystem playerDeadFX;
     [SerializeField] private ParticleSystem playerHealthFx;
-
-    public List<int> damageAnimationList;
-
+    [SerializeField] private Transform footStep;
+    
+    [Header("Player Components")]
     public int playerHealth;
     public int playerMaxHealth = 100;
     public NavMeshAgent playerAi;
     public Animator playerAnimator;
-
-    private Finger MovementFinger;
-    public Vector2 MovementAmount;
-
+    public List<int> damageAnimationList;
+    
     private void Start()
     {
         Time.timeScale = 1;
@@ -47,6 +52,8 @@ public class PlayerController : MonoBehaviour
         playerAi.Move(scaledMovement);
         playerAnimator.SetFloat("moveX", MovementAmount.x);
         playerAnimator.SetFloat("moveZ", MovementAmount.y);
+        
+      
 
         PlayerRangeCalculate();
     }
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
         EnhancedTouchSupport.Disable();
     }
 
-    private void HandleFingerMove(Finger MovedFinger)
+    private void HandleFingerMove(Finger MovedFinger)//Parmak hareket ettirildiğinde
     {
         if (MovedFinger == MovementFinger)
         {
@@ -93,10 +100,14 @@ public class PlayerController : MonoBehaviour
 
             Joystick.Knob.anchoredPosition = knobPosition;
             MovementAmount = knobPosition / maxMovement;
+            if (!footStep.transform.GetChild(0).gameObject.activeInHierarchy)
+            {
+                footStep.transform.GetChild(0).gameObject.SetActive(true);
+            }
         }
     }
 
-    private void HandleLoseFinger(Finger LostFinger)
+    private void HandleLoseFinger(Finger LostFinger)//Parmak ekrandan çekildiğinde
     {
         if (LostFinger == MovementFinger)
         {
@@ -107,7 +118,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void HandleFingerDown(Finger TouchedFinger)
+    private void HandleFingerDown(Finger TouchedFinger) //Parmağı ilk dokunuş
     {
         if (MovementFinger == null && TouchedFinger.screenPosition.x <= Screen.width / 2f)
         {
@@ -119,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private Vector2 ClampStartPosition(Vector2 StartPosition)
+    private Vector2 ClampStartPosition(Vector2 StartPosition)//Başlangıç pozisyonu
     {
         if (StartPosition.x < JoystickSize.x / 2)
         {
@@ -138,7 +149,7 @@ public class PlayerController : MonoBehaviour
         return StartPosition;
     }
 
-    private void PlayerRangeCalculate()
+    private void PlayerRangeCalculate()//Player ve Enemy mesafe hesaplama
     {
         var enemies = GameManager.Instance.enemyList;
        
@@ -162,7 +173,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-     public void PlayerDead()
+     public void PlayerDead()//Player Ölümü
      {
          playerHealth -= 10;
          foreach (var damageValue in damageAnimationList)
@@ -184,14 +195,14 @@ public class PlayerController : MonoBehaviour
          }
     }
 
-     IEnumerator GameOverPanel()
+     IEnumerator GameOverPanel()//Game Over UI
      {
          yield return new WaitForSeconds(1.5f);
          GameManager.Instance.gameOverPanel.SetActive(true);
          
 
      }
-     private void OnTriggerEnter(Collider other)
+     private void OnTriggerEnter(Collider other)//Playerın health ile çarpışması
      {
          if (other.gameObject.CompareTag("Health"))
          {
