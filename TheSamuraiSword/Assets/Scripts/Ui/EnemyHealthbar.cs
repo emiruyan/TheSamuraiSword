@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthbar : MonoBehaviour
 {
+    //Bir int değişkeni olan ve Enemy üzerinde bulunan health değişkenimizi Ui olarak Can barımızda kullanmamızı sağlayan class
     public EnemyController enemyController;
     public Slider enemyHealthBar;
 

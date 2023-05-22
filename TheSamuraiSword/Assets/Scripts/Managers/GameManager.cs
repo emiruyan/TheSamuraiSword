@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+   //GameManager classımız Singleton olduğu için bir çok class arasındaki haberleşmeyi GameManager üzerinden yapıyoruz
    [Header("Classes")]
    public PlayerController playerController;
    public JoystickController joystickController;

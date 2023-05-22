@@ -69,10 +69,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelEndCollider: {fileID: 1414792590}
   levelWinPanel: {fileID: 543773911827883474}
-  levelEndLight1: {fileID: 7087015463939549482}
-  levelEndLight2: {fileID: 7087015464369148287}
   levelEndParticle1: {fileID: 7033212506978125250}
   levelEndParticle2: {fileID: 7033212506620919191}
+  levelEndLight1: {fileID: 7087015463939549482}
+  levelEndLight2: {fileID: 7087015464369148287}
   enemyWinCounter: {fileID: 3366227850139393503}
 --- !u!1 &152777084009483266
 GameObject:
@@ -21133,10 +21133,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 93143990974693615}
-    - target: {fileID: 1409078755139949182, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevelButton
-      objectReference: {fileID: 0}
     - target: {fileID: 2961443937116801988, guid: f5a1119d724d5b04eb56d74ef1be94ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

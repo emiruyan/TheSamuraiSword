@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 public class HealthUpgaredeController : MonoBehaviour
 {
     //Health noktalarımızı bir Transform dizisi üzerinde tutup random olarak spawn ediyoruz. Belirli bir süre sonra yok ediyoruz.
+    //Spawn olan health'in ne kadar süre sahnede kalacağına ve ne sıklıkla spawn olacağına Inspector üzerinden erişebiliyoruz.
+    
     public Transform[] healthLocations;
     public GameObject healthIncreaser;
     private int randomNum;

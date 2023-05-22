@@ -8,8 +8,7 @@ public class ShurikenUi : MonoBehaviour
 { 
     public Transform iconTransform;
     private Camera mainCamera;
-   
-    
+
     private void Start()
     {
         mainCamera = Camera.main;

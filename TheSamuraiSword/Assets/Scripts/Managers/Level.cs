@@ -39,10 +39,5 @@ public class Level : MonoBehaviour
          yield return new WaitForSeconds(spawnInterval);
       }
    }
-
-   public void TriggerSpawn(Vector3 pos)
-   {
-      GameObject newEnemy = ObjectPoolPattern.Instance.GetPoolObject(Random.Range(0,ObjectPoolPattern.Instance.pools.Length));
-      newEnemy.transform.position = pos;
-   }
+   
 }

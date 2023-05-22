@@ -731,6 +731,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 64e86e1b48b0a4a54a0c72058ad29b41, type: 3}
+    - target: {fileID: 6087480738488048877, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7089266
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087480738488048877, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7903034
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087480738488048877, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
     - target: {fileID: 6087480738939585752, guid: 034a3716313424236a33c8c2dcf84620, type: 3}
       propertyPath: m_Name
       value: Panel Style 3

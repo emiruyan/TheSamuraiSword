@@ -22975,10 +22975,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelEndCollider: {fileID: 6186720435876966075}
   levelWinPanel: {fileID: 1385569578599269602}
-  levelEndLight1: {fileID: 1415395019792381017}
-  levelEndLight2: {fileID: 1415395019284516293}
   levelEndParticle1: {fileID: 1181245763838138545}
   levelEndParticle2: {fileID: 1181245764422770989}
+  levelEndLight1: {fileID: 1415395019792381017}
+  levelEndLight2: {fileID: 1415395019284516293}
   enemyWinCounter: {fileID: 4181144925180181743}
 --- !u!1 &5808273416269810312
 GameObject:
