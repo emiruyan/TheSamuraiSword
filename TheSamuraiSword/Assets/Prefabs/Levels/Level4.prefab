@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCount: 12
-  spawnInterval: 4
+  spawnInterval: 6
   spawnLocation:
   - {fileID: 1348864867876669005}
   - {fileID: 5999365066640535198}

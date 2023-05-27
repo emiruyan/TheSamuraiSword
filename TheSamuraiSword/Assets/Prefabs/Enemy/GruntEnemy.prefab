@@ -562,7 +562,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 36
   m_CollisionDetection: 0
 --- !u!65 &5797167629729989928
 BoxCollider:
@@ -589,20 +589,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0682950e1c4859e48893adb21cbc5a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAi: {fileID: 1617084073}
+  enemyCollider: {fileID: 5797167629729989928}
+  enemyRigidbody: {fileID: 5797167629729989929}
+  enemyDamageList: 3c000000
   enemyType: {fileID: 11400000, guid: 008355125099def4689e602a07f05e00, type: 2}
   enemyDistance: 5
-  deathClip: {fileID: 8300000, guid: be5a12e108ad9fc47882b4fd71782594, type: 3}
-  enemyDeadParticle: {fileID: 1482970537085940522}
-  enemyCollider: {fileID: 5797167629729989928}
-  enemyTransform: {fileID: 0}
-  shuriken: {fileID: 193634, guid: 8dbcc69602c9c42488e0ea20ef28bfa9, type: 3}
-  footStepEnemy: {fileID: 0}
-  enemyDamageList: 3c000000
-  enemyAi: {fileID: 1617084073}
   enemySpeed: 0
   enemyHealth: 0
   enemyMaxHealth: 100
   enemyDamage: 0
+  shuriken: {fileID: 193634, guid: 8dbcc69602c9c42488e0ea20ef28bfa9, type: 3}
+  deathClip: {fileID: 8300000, guid: be5a12e108ad9fc47882b4fd71782594, type: 3}
+  enemyDeadParticle: {fileID: 1482970537085940522}
 --- !u!195 &1617084073
 NavMeshAgent:
   m_ObjectHideFlags: 0

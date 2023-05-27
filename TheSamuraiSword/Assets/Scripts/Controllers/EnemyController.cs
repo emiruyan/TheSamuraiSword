@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public Collider enemyCollider;
     private Transform playerTransform;
     private Animator enemyAnim;
+    [SerializeField] private Rigidbody enemyRigidbody;
     public List<int> enemyDamageList;
     
     [Header("Scriptable Variables")]
@@ -90,7 +91,8 @@ public class EnemyController : MonoBehaviour
         {
             enemyCollider.enabled = false;
             GameManager.Instance.enemyDeathCounter.EnemyCounter();
-            enemyAnim.SetBool("isDead",true); 
+            enemyAnim.SetBool("isDead",true);
+            enemyRigidbody.constraints = RigidbodyConstraints.FreezeAll;
             InstantiateShuriken();
             enemyDeadParticle.Play();
             enemyAi.Stop();
